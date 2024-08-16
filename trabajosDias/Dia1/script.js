@@ -9,8 +9,8 @@ nacimiento(17)
 //Grados celsius a fahrenheit
 var celsius=35
 const convercion= function tem(){
-    f=32+(9*celsius/5)
-    console.log(f);
+    fahrenheit=32+(9*celsius/5)
+    console.log(fahrenheit);
     
 }
 
@@ -32,3 +32,23 @@ const descuento=  function llegada(){
 }
 
 descuento()
+
+function saludo(){
+    console.log("Hola");
+    
+}
+saludo();
+
+
+function suma(num1 , num2){
+    return num1 + num2;
+}
+
+console.log(suma(15, 20));
+
+
+function multi(a,b){
+    console.log(a*b);
+    
+}
+multi(13, 8)
