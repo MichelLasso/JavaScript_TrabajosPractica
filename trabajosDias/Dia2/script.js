@@ -1,4 +1,4 @@
-const academicojson=[
+let academicojson=[
     {
         "salon": "Sputnik",
         "estudiantes": [
@@ -61,6 +61,21 @@ const academicojson=[
     }
 ]
 
+/*function filtro(js){
+    console.log(typeof academicojson);
+    
+    
+    let nuevo = JSON.parse(js)
+    console.log(typeof nuevo);
+    
+    let estudiantes = nuevo[2].estudiantes;
+
+    estudiantes.push({"identificacion": 56571854534})
+    return JSON.stringify(nuevo, null, 2);
+}
+academicojson = filtro(academicojson)
+console.log(academicojson);*/
+
 console.log("------------------------------------------------");        
 console.log("                 CAMPUSLAND                     ");
 console.log("------------------------------------------------");        
@@ -72,6 +87,7 @@ console.log("3. Coordinador");
 var opcion= prompt(" Elige tu cargo para iniciar sesión")
         
     if (opcion=="camper"){
+        
         var usuario= prompt("Ingrese su nombre de usuario")
         var contraseña= prompt("Ingrese su contraseña (ID)")
 
@@ -92,9 +108,48 @@ var opcion= prompt(" Elige tu cargo para iniciar sesión")
                     console.log("Fecha de inicio: ",x["inicio"])
                     console.log("Fecha de finalización: ",x["finalizacion"])
 
-                    var fechasesion = datetime.date.today()
-
+                    var fechasesion = new Date()
+                    var now= fechasesion.toLocaleString();
+                    console.log(now);
                     
+                    const actividad = "Revision de sus datos personales"
+                    const estadoplat = "Activo"
+                    
+                    var entrada={
+                        "id": contraseña,
+                        "fecha": now
+                    }                    
+                    entrada.actividad= actividad;
+                    entrada.estadoplat= estadoplat;
+
+                    var pregunta=prompt("\n¿Desea continuar viendo sus datos? Si no, se volverá al menú principal. (si/no)\n")
+                    
+                    if (pregunta = "no"){
+                        const estadoplat= "finalizado"
+                        entrada.estadoplat=estadoplat
+                    }
+                    
+                    
+                    // ACTUALIZAR: Actualiza un ítem existente en el arreglo
+                    function actualizarDato(index, nombre, edad, pais) {
+                        if (index >= 0 && index < datos.length) {
+                        datos[index] = { nombre, edad, pais };
+                        console.log("Dato actualizado:", datos[index]);
+                        } else {
+                        console.log("Índice no válido");
+                        }
+                    }
+
+                    // ELIMINAR: Elimina un ítem del arreglo
+                    function eliminarDato(index) {
+                        if (index >= 0 && index < datos.length) {
+                        datos.splice(index, 1);
+                        console.log("Dato eliminado");
+                        } else {
+                        console.log("Índice no válido");
+                        }
+                    }
+
                 }
             }
         }
