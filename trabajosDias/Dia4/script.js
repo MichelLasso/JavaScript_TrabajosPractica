@@ -136,26 +136,135 @@ if (opcion == 2) {
 
     console.log("--Editar Datos--");
 
-    function actualizarDato(index, nombre, edad, pais) {
-        if (index >= 0 && index < datos.length) {
-            datos[index] = { nombre, edad, pais };
-            console.log("Dato actualizado:", datos[index]);
-        } else {
-            console.log("Índice no válido");
+    
+    for (const i of Datos){
+
+        for (const x of i["informacion_personal"]){
+            console.log("1. Nombre del empleado: ",x["nombre"]);
+            console.log("2. Edad: ",x["edad"]);
+
+        }
+        var cambiarUsuario = Number(prompt("Ingrese el dato que deseas cambiar: "));
+
+        if (cambiarUsuario===1){
+            var cambiarDato= prompt("Ingresa el nuevo nombre :");
+
+            i.informacion_personal.nombre=cambiarDato
+
+            console.log("Nombre del empleado: ",i.informacion_personal.nombre);
+        }
+        if (cambiarUsuario===2){
+            var cambiarDato2= prompt("Ingresa la nueva edad :");
+
+            i.informacion_personal.edad=cambiarDato2
+
+            console.log("Edad: ",i.informacion_personal.edad);
         }
     }
-
 }
-if (opcion==3){
-    console.log("\n--Eliminar datos\n");
 
-    var eliminar= prompt("Que deseas eliminar")
-    for (const i of Datos){
-        for(const x in ["informacion_personal"]){
-            delete Datos.edad
-            console.log("edad",x["edad"]);
-            
+
+if (opcion==3){
+
+    console.log("\n--Eliminar datos\n");
+    console.clear()
+    var verOpcionb= prompt(
+        "1. Eliminar información Personal\n"+
+        "2. Eliminar historial educativo\n"+
+        "3. Eliminar Experiencia laboral\n"
+    )
+
+    if (verOpcionb==1){
+        console.clear()
+        console.log("\n--Información Personal--\n");
+        var verOpcionbPers= prompt(
+            "1. Eliminar Información personal\n"+
+            "2. Eliminar Dirección\n"+
+            "3. Eliminar Contacto\n"
+        )
+
+        if(verOpcionbPers==1){
+            for(const i of Datos[0]["informacion_personal"]){
+                console.log(cont);
+
+                console.log("Nombre del empleado: ",i["nombre"]);
+                console.log("Edad: ",i["edad"]);
+            }
+            var elidato0= prompt("Digite el número del dato que deseas borrar ")
+            Datos[0]["informacion_personal"].splice(elidato0-1,1)
+            console.log(Datos[0]["informacion_personal"]);
         }
+        if(verOpcionbPers==2){
+            for(const i of Datos[0]["informacion_personal"]){
+
+                for(const x of i["direccion"]){
+
+                    console.log("calle", x["calle"]);
+                    console.log("numero",x["numero"]);
+                    console.log("ciudad",x["ciudad"]);
+                    
+                }
+                var elidato1= prompt("Digite el número del dato que deseas borrar ")
+                Datos[0]["informacion_personal"][0]["direccion"].splice(elidato1-1,1)
+                console.log(Datos[0]["informacion_personal"][0]["direccion"]);
+            }
+        }
+        if(verOpcionbPers==3){
+            for(const i of Datos[0]["informacion_personal"]){
+
+                for(const x of i["contacto"]){
+
+                    console.log("Correo", x["correo"]);
+                    console.log("Telefono",x["telefono"]);                    
+                }
+                var elidato1= prompt("Digite el número del dato que deseas borrar ")
+                Datos[0]["informacion_personal"][0]["contacto"].splice(elidato1-1,1)
+                console.log(Datos[0]["informacion_personal"][0]["contacto"]);
+            }3
+        }
+    }
+    if(verOpcionb==2){
+        console.clear()
+        console.log("\n--Historial Educativo--\n");
+
+        let cont=1
+
+        for(const i of Datos[0]["historial_educativo"]){
+            console.log(cont);
+            
+            console.log("Nivel Academico: ", i["nivel"]);
+            console.log("Institución", i ["institucion"]);
+            console.log("Año de inicio", i["anio_inicio"]);
+            console.log("Año de finalización", i["anio_fin"]);
+            console.log("Titulo", i["titulo"]);   
+            cont=cont+1      
+        }
+        var elidato= prompt("Digite el número del dato que deseas borrar ")
+        Datos[0]["historial_educativo"].splice(elidato-1,1)
+        console.log(Datos[0]["historial_educativo"]);
+        
+        
+    }
+    if (verOpcionb==3){
+        console.clear()
+        console.log("\n--Experiencia Laboral--\n");
+        
+        let cont=1
+
+        for(const i of Datos[0]["experiencia_laboral"]){
+            
+            console.log(cont);
+            
+            console.log("Puesto: ", i["puesto"]);
+            console.log("Empresa", i ["empresa"]);
+            console.log("Periodo", i["periodo"]);
+            console.log("Responsabilidades", i["responsabilidades"]);
+            console.log("Titulo", i["titulo"]);   
+            cont=cont+1      
+        }
+        var elidato2= prompt("Digite el número del dato que deseas borrar ")
+        Datos[0]["experiencia_laboral"].splice(elidato2-1,1)
+        console.log(Datos[0]["experiencia_laboral"]);
     }
     
 }
@@ -218,9 +327,4 @@ if (opcion==4){
         }
     }
 }
-/*{
-    "puesto": puesto,
-    "empresa": empresa,
-    "periodo": periodo,
-    "responsabilidades": responsabilidades
-}*/
+
