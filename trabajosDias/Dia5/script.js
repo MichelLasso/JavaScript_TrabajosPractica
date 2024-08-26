@@ -41,6 +41,9 @@ function addProduct(product){
 function addSupplier(supplier){
     DatosJson[0]["suppliers"].push[supplier]
 }
+function addOrder(order){
+    DatosJson[0]["orders"].push[order]
+}
 //VIEWPRODUCTS
 var cont=1
 function viewProducts(){
@@ -117,11 +120,88 @@ function updateSupplier(email, newDetails){
 function updateSupplier(address, newDetails){
     DatosJson[0]["suppliers"][0][address]=newDetails
 }
-  
+// Stock Management
+function checkStockLevels(){
+    for (let i of DatosJson[0]["products"])
+        if(i["quantityInStock"]<10){
+            viewProducts()
+        }
+        else{
+            console.log("there are no products with that sales quantity :)");
+            
+        }
+}
+//filter products
+function searchProducts(query){
+    for (let i of DatosJson[0]["products"]){
+        if(query==i["name"]){
+            viewProducts()
+        }
+        else{
+            console.log("product not found");
+        }
+    }
+    for (let i of DatosJson[0]["products"]){
+        if(query==i["category"]){
+            viewProducts()
+        }
+    }
+    for (let i of DatosJson[0]["products"]){
+        if(query==i["supplierId"]){
+            viewProducts()
+        }
+    }
+}
+//filter order
+function filterOrders(criteria){
+    for (let i of DatosJson[0]["orders"]){
+        if(criteria==i["status"]){
+            viewOrders()
+        }
+        else{
+            console.log("Order not found");
+            
+        }
+    }
+
+    for (let i of DatosJson[0]["orders"]){
+        if(criteria==i["orderDate"]){
+            viewOrders()
+        }
+    }
+
+    for (let i of DatosJson[0]["orders"]){
+        if(criteria==i["productId"]){
+            viewOrders()
+        }
+    }
+}
+//validation
+function productId(){
+    for (let i of DatosJson[0]["products"]){
+        if(ValidationIDproduct==i["id"]){
+            console.log("Correct ID");
+        }
+        else{
+            console.log("product id not found :(");
+        }
+    }
+}
+function supplierId(){
+    for (let i of DatosJson[0]["suppliers"]){
+        if(validationSupplierId==i["id"]){
+            console.log("Correct ID");
+        }
+        else{
+            console.log("Suppliers id not found :(");
+            
+        }
+    }
+}
 var opcion= prompt(
     "------------------------\n"+
     "---Inventory System---\n"+
-    "------------------------\n1. Product Management\n2. Supplier Management"
+    "------------------------\n1. Product Management\n2. Supplier Management\n3. Order Management\n4. Stock Management\n5. Reporting\n6. Search and Filter\n7. Data Integrity and Validation"
 )
 if (opcion==1){
     var opcionMana= prompt(
@@ -176,7 +256,7 @@ if (opcion==1){
         if (opcionUp==1){
 
             console.log("Change ID");
- 
+
             let newID= Number(prompt("Enter the new ID: "))
             
             updateProduct("id", newID)
@@ -264,19 +344,20 @@ if(opcion==2){
         var newaddress= prompt("Address: ");
 
         
-        let supplier ={
-            "id": newid,
-            "name": newName,
-            "contactInfo": [
-                {
-                    "phone": newphone,
-                    "email": newemail,
-                    "address": newaddress
-                }
-    
-            ]
+        addSupplier(
+            supplier={
+                "id": newid,
+                "name": newName,
+                "contactInfo": [
+                    {
+                        "phone": newphone,
+                        "email": newemail,
+                        "address": newaddress
+                    }
+        
+                ]
             }
-        addSupplier(supplier)
+        ) 
         console.log(DatosJson[0]["suppliers"]);
     }
     if (opcionSupplier==2){
@@ -303,7 +384,7 @@ if(opcion==2){
         if (opcionUS==1){
 
             console.log("Change ID");
- 
+
             let newID= Number(prompt("Enter the new ID: "))
             
             updateSupplier("id", newID)
@@ -363,4 +444,188 @@ if(opcion==2){
         
     }
 }
+if (opcion==3){
+    var opcionOrder= prompt(
+        "------------------------------\n"+"---Product Management---\n"+"------------------------------\n1.Creat new order\n2.Read all order\n3.Update order\n4.Delete order"
+    )
+    if (opcionOrder==1){
+        console.log(
+            "-----------------------------\n"+
+            "---Creat new orders---\n"+
+            "-----------------------------"
+        );
+        var orderid= Number(prompt("order Id: "));
+        var producid= prompt("produc id: ");
+        var quantityOrder= prompt("quantity: ");
+        var orderDate= prompt("order Date: ");
+        var statusOrder= prompt("status: ");
+    
+        addOrder(
+            order={
+                "orderId": orderid,
+                "productId": producid,
+                "quantity": quantityOrder,
+                "orderDate": orderDate,
+                "status": statusOrder,
+            }
+        )
+        console.log(DatosJson);
+    }
+}
+if (opcion==4){
+    var StockOpcion= prompt(
+        "------------------------------\n"+"---Stock Management---\n"+"------------------------------\n1. products with low sales\n2. increments the stock level of a product."
+    )
+    
+    if (StockOpcion==1){
+        console.log(
+            "-----------------------------\n"+
+            "---products with low sales---\n"+
+            "-----------------------------"
+        );
+        checkStockLevels()
+    }
+    if (StockOpcion==2){
+        console.log(
+            "----------------------------------------------\n"+
+            "---increments the stock level of a product.---\n"+
+            "----------------------------------------------"
+        );
+    }
+}
+if(opcion==5){
+    console.log(
+        "-----------------------------\n"+
+        "---Reporting---\n"+
+        "-----------------------------"
+    );
+}
+if(opcion==6){
+    console.log(                                                                                                                                                                                                                                                                                                                        
+        "-----------------------------\n"+
+        "---Search and Filter---\n"+
+        "-----------------------------"
+    );
+    var opcionSearch= prompt(
+        "1. search for product\n"+
+        "2. search for Order"
+    )
+    if (opcionSearch==1){
+        console.log(
+            "-----------------------------\n"+
+            "---search for product---\n"+
+            "-----------------------------"
+        );
+        var enterUserSP= prompt(
+            "1. name\n"+"2. category\n"+"3. supplier"
+        )
+        if (enterUserSP==1){
+            console.log(
+                "-----------------------\n"+
+                "---name---\n"+
+                "------------------------"
+            );
+            var enterName= prompt(
+                "Enter the name: "
+            )
+            searchProducts(enterName)
+        }
+        if(enterUserSP==2){
+            console.log(
+                "-----------------------\n"+
+                "---category---\n"+
+                "------------------------"
+            );
+            var enterCategory= prompt("Enter the category: ")
 
+            searchProducts(enterCategory)
+        }
+        if (enterUserSP==3){
+            console.log(
+                "-----------------------\n"+
+                "---supplier---\n"+
+                "------------------------"
+            );
+            var enterSupplier= Number(prompt("Enter the supplier id: "))
+
+            searchProducts(enterSupplier)
+        }
+    }
+    if (opcionSearch==2){
+        console.clear
+        console.log(
+            "-----------------------------\n"+
+            "---search for product---\n"+
+            "-----------------------------"
+        );
+        var enterUserSo= prompt(
+            "1. status\n"+"2. date range \n"+"3. product"
+        )
+        if (enterUserSo==1){
+            console.clear()
+            console.log(
+                "-----------------------\n"+
+                "---status---\n"+
+                "------------------------"
+            );
+            var enterstatus= prompt("Enter the status: ")
+
+            filterOrders(enterstatus)
+            
+        }
+        if (enterUserSo==2){
+            console.clear()
+            console.log(
+                "-----------------------\n"+
+                "---date range---\n"+
+                "------------------------"
+            );
+            var EnterDateRange= Number(prompt("Enter the date range: "))
+
+            filterOrders(EnterDateRange)
+            
+        }
+        if (enterUserSo==3){
+            console.clear()
+            console.log(
+                "-----------------------\n"+
+                "---product---\n"+
+                "------------------------"
+            );
+            var enterProduct= Number(prompt("Enter the product id: "))
+
+            filterOrders(enterProduct)
+            
+        }
+    }
+}
+if(opcion==7){
+    console.log(
+        "-----------------------------------\n"+
+        "---Data Integrity and Validation---\n"+
+        "-----------------------------------"
+    );
+    var ValidationOpcion= prompt(
+        "1. Product ID\n2. Supplier ID"
+    )
+    if (ValidationOpcion==1){
+        console.clear()
+        console.log(
+            "-----------------------\n"+
+            "---product id---\n"+
+            "------------------------"
+        );
+        var ValidationIDproduct= prompt("Enter the Product ID: ")
+        productId()
+    }
+    if (ValidationOpcion==2){
+        console.clear()
+        console.log(
+            "-----------------------\n"+
+            "---Supplier ID---\n"+
+            "------------------------"
+        );
+        var validationSupplierId= prompt("Enter the Supplier ID: ")
+        supplierId(validationSupplierId)
+    }
+}
