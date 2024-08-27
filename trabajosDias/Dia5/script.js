@@ -7,12 +7,50 @@ var DatosJson = [
                 "category": "Electronics",
                 "price": 999.99,
                 "quantityInStock": 50,
-                "supplierId": 101
+                "supplierId": 130
+            },
+            {
+                "id": 2,
+                "name": "pc",
+                "category": "Electronics",
+                "price": 999.99,
+                "quantityInStock": 10,
+                "supplierId": 304
+            },
+            {
+                "id": 31,
+                "name": "cel",
+                "category": "Electronics",
+                "price": 999.99,
+                "quantityInStock": 30,
+                "supplierId": 203
             }
         ],
         "suppliers": [
             {
                 "id": 101,
+                "name": "Tech Supplies Inc.",
+                "contactInfo": [
+                    {
+                        "phone": "123-456-7890",
+                        "email": "sales@techsupplies.com",
+                        "address": "123 Tech Lane, Silicon Valley, CA"
+                    }
+                ]
+            },
+            {
+                "id": 203,
+                "name": "Tech Supplies Inc.",
+                "contactInfo": [
+                    {
+                        "phone": "123-456-7890",
+                        "email": "sales@techsupplies.com",
+                        "address": "123 Tech Lane, Silicon Valley, CA"
+                    }
+                ]
+            },
+            {
+                "id": 304,
                 "name": "Tech Supplies Inc.",
                 "contactInfo": [
                     {
@@ -29,6 +67,20 @@ var DatosJson = [
                 "productId": 1,
                 "quantity": 5,
                 "orderDate": "2024-08-23",
+                "status": "Delivered"
+            },
+            {
+                "orderId": 300,
+                "productId": 304,
+                "quantity": 5,
+                "orderDate": "2024-08-30",
+                "status": "Delivered"
+            },
+            {
+                "orderId": 500,
+                "productId": 2,
+                "quantity": 5,
+                "orderDate": "2024-08-05",
                 "status": "Delivered"
             }
         ]
@@ -48,7 +100,7 @@ function addOrder(order){
 var cont=1
 function viewProducts(){
     for (const i of DatosJson[0]["products"]){
-        console.log("Data: ",cont);
+        console.log("------Data: ",cont,"------");
         console.log("Id :",i["id"]);
         console.log("Name :",i["name"]);
         console.log("Category :",i["category"]);
@@ -131,6 +183,15 @@ function checkStockLevels(){
             
         }
 }
+function restockProduct(id, quantity){
+    for(let i  of DatosJson[0]["products"]){
+        if (i["id"]==id){
+            i["quantityInStock"] += quantity
+            console.log(DatosJson[0]["products"]);
+            
+        } 
+    }
+}
 //filter products
 function searchProducts(query){
     for (let i of DatosJson[0]["products"]){
@@ -198,6 +259,11 @@ function supplierId(){
         }
     }
 }
+//date
+
+
+
+
 var opcion= prompt(
     "------------------------\n"+
     "---Inventory System---\n"+
@@ -491,14 +557,95 @@ if (opcion==4){
             "---increments the stock level of a product.---\n"+
             "----------------------------------------------"
         );
+        var id= Number(prompt("enter  the products id: "))
+        var quantity=Number(prompt(
+            "enter the quantity you want to increment :"
+        ))
+        restockProduct(id,quantity)
     }
 }
+function generateSalesReport(startDate, endDate){
+    let filterNew= DatosJson[0]["orders"].filter(i=>i["orderDate"]>=startDate && i["orderDate"]<=endDate)
+    let cont=1
+    for (let i=1; i<filterNew.length;i++){
+        cont++
+    }
+    console.log("the total number of orders in the date range entered is: ",cont);  
+    let totalRevenue = 0;
+
+    for (let order of filterNew) {
+        const productId = order["productId"];
+        const quantitySold = order["quantity"];
+        const product = DatosJson[0]["products"].find(p => p["id"] === productId);
+
+        
+        if (product) {
+            const productRevenue = product["price"] * quantitySold;
+            totalRevenue += productRevenue;
+            var nameProduct= product["name"]
+            var stockProduct= product["quantityInStock"]
+            var priceUn= product["price"]
+
+            console.log("Name :", nameProduct);
+            console.log("quantity In Stock :", stockProduct);
+            console.log("Price :", priceUn);
+        }  
+    }
+
+    console.log("Total revenue from product sales: $", totalRevenue);
+    
+
+    
+    
+    
+}
+function generateInventoryReport(){
+    for(let i = 0 ; i < DatosJson[0].products.length; i++){
+        console.log("Name: ",DatosJson[0]["products"][0]["name"]);
+        console.log("Stock: ", DatosJson[0]["products"][0]["quantityInStock"]);
+        
+        let valor= DatosJson[0]["products"][0]["quantityInStock"] * DatosJson[0]["products"][0]["price"]
+        console.log("The stock value is: ",valor);
+    
+        for (let i = 0 ; i < DatosJson[0].suppliers.length; i++){
+            console.log(`id : ${DatosJson[0].suppliers[i].id}`);
+            console.log(`name : ${DatosJson[0].suppliers[i].name}`);
+            console.log(`phone : ${DatosJson[0].suppliers[i].contactInfo.phone}`);
+            console.log(`email : ${DatosJson[0].suppliers[i].contactInfo.email}`);
+            console.log(`adress : ${DatosJson[0].suppliers[i].contactInfo.address}`);
+    
+        }
+    }
+}
+
 if(opcion==5){
+    console.clear()
     console.log(
         "-----------------------------\n"+
         "---Reporting---\n"+
         "-----------------------------"
     );
+    var opcionReporte=prompt("1. report by date\n2. report all products")
+   
+    if (opcionReporte==1){
+        console.log(
+            "-----------------------------\n"+
+            "---report by date---\n"+
+            "-----------------------------"
+        );
+        var startDate= prompt("Enter start date: ")
+        var endDate= prompt("enter the End date: ")
+        generateSalesReport(startDate,endDate)
+        
+    }
+    if (opcionReporte==2){
+        console.log(
+            "-----------------------------\n"+
+            "---report all products---\n"+
+            "-----------------------------"
+        );
+        generateInventoryReport()
+    }
 }
 if(opcion==6){
     console.log(                                                                                                                                                                                                                                                                                                                        
