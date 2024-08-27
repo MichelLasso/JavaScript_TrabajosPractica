@@ -18,7 +18,7 @@ var DatosJson = [
                 "supplierId": 304
             },
             {
-                "id": 31,
+                "id": 304,
                 "name": "cel",
                 "category": "Electronics",
                 "price": 999.99,
@@ -260,7 +260,38 @@ function supplierId(){
     }
 }
 //date
+function generateSalesReport(startDate, endDate){
+    let filterNew= DatosJson[0]["orders"].filter(i=>i["orderDate"]>=startDate && i["orderDate"]<=endDate)
+    let cont=1
+    
+    for (let i=1; i<filterNew.length;i++){
+        cont++
+    }
+    console.log("the total number of orders in the date range entered is: ",cont);  
+    let totalRevenue = 0;
 
+    for (let order of filterNew) {
+        const productId = order["productId"];
+        const quantitySold = order["quantity"];
+        const product = DatosJson[0]["products"].find(p => p["id"] === productId);
+
+        
+        if (product) {
+            const productRevenue = product["price"] * quantitySold;
+            totalRevenue += productRevenue;
+            var nameProduct= product["name"]
+            var stockProduct= product["quantityInStock"]
+            var priceUn= product["price"]
+            console.log("-----------------");
+            
+            console.log("Name :", nameProduct);
+            console.log("quantity In Stock :", stockProduct);
+            console.log("Price :", priceUn);
+        }  
+    }
+
+    console.log("Total revenue from product sales: $", totalRevenue);
+}
 
 
 
@@ -564,41 +595,7 @@ if (opcion==4){
         restockProduct(id,quantity)
     }
 }
-function generateSalesReport(startDate, endDate){
-    let filterNew= DatosJson[0]["orders"].filter(i=>i["orderDate"]>=startDate && i["orderDate"]<=endDate)
-    let cont=1
-    for (let i=1; i<filterNew.length;i++){
-        cont++
-    }
-    console.log("the total number of orders in the date range entered is: ",cont);  
-    let totalRevenue = 0;
 
-    for (let order of filterNew) {
-        const productId = order["productId"];
-        const quantitySold = order["quantity"];
-        const product = DatosJson[0]["products"].find(p => p["id"] === productId);
-
-        
-        if (product) {
-            const productRevenue = product["price"] * quantitySold;
-            totalRevenue += productRevenue;
-            var nameProduct= product["name"]
-            var stockProduct= product["quantityInStock"]
-            var priceUn= product["price"]
-
-            console.log("Name :", nameProduct);
-            console.log("quantity In Stock :", stockProduct);
-            console.log("Price :", priceUn);
-        }  
-    }
-
-    console.log("Total revenue from product sales: $", totalRevenue);
-    
-
-    
-    
-    
-}
 function generateInventoryReport(){
     for(let i = 0 ; i < DatosJson[0].products.length; i++){
         console.log("Name: ",DatosJson[0]["products"][0]["name"]);
