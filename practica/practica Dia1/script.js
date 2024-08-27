@@ -28,4 +28,14 @@ bool4= true
 operationbanders= (bool||bool2)& (bool3||bool4);
 console.log(operationbanders);
 
+// Crear una promesa que se cumple después de 2 segundos
+const promesa = new Promise((resolve, reject) => {
+    setTimeout(() => {
+    resolve("¡Hola, mundo!"); // La promesa se cumple con un valor
+    }, 2000);
+});
 
+// Manejar la promesa
+promesa.then((valor) => {
+    console.log(valor); // ¡Hola, mundo!
+});

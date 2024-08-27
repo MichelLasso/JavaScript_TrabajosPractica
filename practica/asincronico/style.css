@@ -1,0 +1,15 @@
+#button1, #button2{
+    color: black;
+    background-color: aliceblue;
+    border: 1px solid palevioletred;
+    border-radius: 5px;
+    height: 50px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+h1{
+    color: palevioletred;
+    background-color: aliceblue;
+}
+#hi{
+    color: plum
+}
