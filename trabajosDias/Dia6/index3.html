@@ -17,7 +17,45 @@
                 <button id="eliminar">Eliminar</button>
                 
             </div>
-            <div id="output"></div>
+            <div id="output">
+                <div id="formularioCrear"  style="display: none;">
+                    <input type="number" id="id" placeholder="id">
+                    <br>
+                    <input type="name" id="name" placeholder="Name">
+                    <br>
+                    <input type="text" id="phone" placeholder="phone">
+                    <br>
+                    <input type="email" id="email" placeholder="email">
+                    <br>
+                    <input type="number" id="address" placeholder="address">
+                    <br>
+                    <button id="enviar" type="submit">Enviar</button>
+                </div>
+
+                <div id="eliminarEnter" style="display: none;">
+                    <input type="number" id="idEliminar" placeholder="ingrese el id a eliminar">
+                    <button id="btonEliminar">Eliminar</button>
+                </div>
+                <div id="formularioActualizar" style="display: none;">
+                    <h2>Actualizar producto</h2>
+                    <label for="idActualizar">Ingrese el ID del producto a actualizar:</label>
+                    <input type="number" id="idActualizar" placeholder="ID del producto">
+    
+                    <div id="camposActualizar">
+                        <input type="number" id="id" placeholder="Nombre del producto">
+                        <br>
+                        <input type="name" id="name" placeholder="Categoría del producto">
+                        <br>
+                        <input type="text" id="priceActualizar" placeholder="Precio del producto">
+                        <br>
+                        <input type="email" id="quantityInStockActualizar" placeholder="Cantidad en stock del producto">
+                        <br>
+                        <input type="number" id="supplierIdActualizar" placeholder="ID del proveedor del producto">
+                        <br>
+                        <button id="actualizarProducto">Actualizar</button>
+                    </div>
+                </div>
+            </div>
         </div>
         
     </div>

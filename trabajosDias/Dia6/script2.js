@@ -32,3 +32,46 @@ function verDatos2() {
 }
 
 
+//crear
+const ver=document.getElementById("crear")
+const CrearFormulario=document.getElementById("formularioCrear")
+const enviarCrear=document.getElementById("enviar")
+//inputs
+
+
+ver.addEventListener("click", funcionCrear)
+function funcionCrear(){
+    CrearFormulario.style.display = "block"
+}
+
+enviarCrear.addEventListener("click", opcionCrear)
+function opcionCrear() {
+    const idValue = document.getElementById("id").value;
+    const nameValue = document.getElementById("name").value;
+    const phoneValue = document.getElementById("phone").value;
+    const priceValue = document.getElementById("email").value;
+    const addressValue = document.getElementById("address").value;
+
+    const productoNuevo = {
+        "id": idValue,
+        "name": nameValue,
+        "contactInfo": [
+            {
+                "phone": phoneValue,
+                "email": priceValue,
+                "address": addressValue
+            }
+        ]
+    };
+
+    let datos = localStorage.getItem("Datos.json");
+    if (datos) {
+        datos = JSON.parse(datos);
+    }
+
+    datos.products.push(productoNuevo);
+    console.log(productoNuevo);
+    
+    localStorage.setItem("Datos.json", JSON.stringify(datos));
+    console.log(datos);
+}

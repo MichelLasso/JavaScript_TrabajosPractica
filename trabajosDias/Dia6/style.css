@@ -52,7 +52,7 @@ body{
     color: #A1AFBA;
 }
 #output{
-    background-color: #1C282E;
+    background-color: #A1AFBA;
     width: 60vw;
     padding: 2vw;
     margin-top: 5vw;
@@ -60,5 +60,14 @@ body{
     margin-right: 9vw;
     border-radius: 1vw;
     border: 1px solid  #A1AFBA;
-    color: white;
+    color: #1C282E;
+}
+#link{
+    text-decoration: none;
+}
+#enviar,#actualizarProducto{
+    background-color: #2B4C5D;
+    border-radius: 0.5vw;
+    margin-top: 1vw;
+    color: #A1AFBA;
 }

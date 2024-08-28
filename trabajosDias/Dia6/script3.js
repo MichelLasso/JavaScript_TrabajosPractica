@@ -22,3 +22,46 @@ function verDatos3() {
         }
     })
 }
+
+const ver = document.getElementById("crear");
+const CrearFormulario = document.getElementById("formularioCrear");
+const enviarCrear = document.getElementById("enviar");
+
+ver.addEventListener("click", funcionCrear);
+
+function funcionCrear() {
+  CrearFormulario.style.display = "block";
+}
+
+enviarCrear.addEventListener("click", opcionCrear);
+
+function opcionCrear() {
+  // inputs
+    const idValue = document.getElementById("id").value;
+    const nameValue = document.getElementById("name").value;
+    const categoryValue = document.getElementById("category").value;
+    const priceValue = document.getElementById("price").value;
+    const quantityInStockValue = document.getElementById("quantityInStock").value;
+
+  if (idValue && nameValue && categoryValue && priceValue && quantityInStockValue) {
+    const productoNuevo = {
+      id: idValue,
+      name: nameValue,
+      category: categoryValue,
+      price: priceValue,
+      quantityInStock: quantityInStockValue
+    };
+
+    let datos = localStorage.getItem("Datos.json");
+    if (datos) {
+      datos = JSON.parse(datos);
+
+    datos.orders.push(productoNuevo);
+    console.log(productoNuevo);
+
+    localStorage.setItem("Datos.json", JSON.stringify(datos));
+    console.log(datos);
+  } else {
+    console.error("Faltan valores");
+  }
+}
