@@ -1,0 +1,86 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Laptop",
+            "category": "Electronics",
+            "price": 999.99,
+            "quantityInStock": 50,
+            "supplierId": 130
+        },
+        {
+            "id": 2,
+            "name": "pc",
+            "category": "Electronics",
+            "price": 909.99,
+            "quantityInStock": 10,
+            "supplierId": 304
+        },
+        {
+            "id": 304,
+            "name": "cel",
+            "category": "Electronics",
+            "price": 609.99,
+            "quantityInStock": 30,
+            "supplierId": 203
+        }
+    ],
+    "suppliers": [
+        {
+            "id": 101,
+            "name": "Tech Supplies Inc.",
+            "contactInfo": [
+                {
+                    "phone": "123-456-7890",
+                    "email": "sales@techsupplies.com",
+                    "address": "123 Tech Lane, Silicon Valley, CA"
+                }
+            ]
+        },
+        {
+            "id": 203,
+            "name": "Tech Supplies Inc.",
+            "contactInfo": [
+                {
+                    "phone": "123-456-7890",
+                    "email": "sales@techsupplies.com",
+                    "address": "123 Tech Lane, Silicon Valley, CA"
+                }
+            ]
+        },
+        {
+            "id": 304,
+            "name": "Tech Supplies Inc.",
+            "contactInfo": [
+                {
+                    "phone": "123-456-7890",
+                    "email": "sales@techsupplies.com",
+                    "address": "123 Tech Lane, Silicon Valley, CA"
+                }
+            ]
+        }
+    ],
+    "orders": [
+        {
+            "orderId": 1001,
+            "productId": 1,
+            "quantity": 5,
+            "orderDate": "2024-08-23",
+            "status": "Delivered"
+        },
+        {
+            "orderId": 300,
+            "productId": 304,
+            "quantity": 5,
+            "orderDate": "2024-08-30",
+            "status": "Delivered"
+        },
+        {
+            "orderId": 500,
+            "productId": 2,
+            "quantity": 5,
+            "orderDate": "2024-08-05",
+            "status": "Delivered"
+        }
+    ]
+}

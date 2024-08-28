@@ -1,0 +1,63 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #6A8595;
+}
+#DivPrincipal{
+    width: 100vw;
+    height: 70vw;
+}
+#cont{
+    width: 100vw;
+    display: flex;
+}
+#texto1{
+    color: #1C282E;
+    text-align: center;
+    padding-top: 2vw;
+    padding-bottom: 5vw;
+    font-size: 5vw;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+#opcion{
+    text-align: center;
+    width: 100vw;
+}
+#products,#provedores,#pedidos{
+    border: 1px solid #A1AFBA;
+    color: #A1AFBA;
+    border-radius: 10px;
+    background-color: #2B4C5D;
+    font-size: 1.5vw;
+    width: 10vw;
+    height: 3vw;
+}
+#opciones{
+    padding-top: 10vw;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 3vw;
+}
+#crear,#eliminar,#actualizar,#leer{
+    font-family:'Courier New', Courier, monospace;
+    font-size: 1.2vw;
+    margin-left: 1vw;
+    border: 1px solid #A1AFBA;
+    color: #A1AFBA;
+    border-radius: 10px;
+    background-color: #2B4C5D;
+}
+#DatoVer2{
+    color: #A1AFBA;
+}
+#output{
+    background-color: #1C282E;
+    width: 60vw;
+    margin-top: 5vw;
+    font-size: 1vw;
+    margin-right: 9vw;
+    border-radius: 1vw;
+    border: 1px solid  #A1AFBA;
+    color: white;
+}
