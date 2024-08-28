@@ -1,11 +1,20 @@
 const leerButton = document.getElementById("leer");
 leerButton.addEventListener("click", verDatos);
 
+let datosJSon= [];
+
+fetch("Datos.json")
+.then(i => i.json())
+.then(ver => {
+    datosJSon.push(ver)
+    
+    
+})
+
 function verDatos() {
-    cont = 1;
-    const datos = JSON.parse(localStorage.getItem("Datos.json"));
-    if (datos) {
-        const products = datos.products; 
+    
+    if (datosJSon) {
+        const products = datosJSon[0].products; 
         document.getElementById("output").innerHTML = ""; 
         for (let i = 0; i < products.length; i++) {
             const product = products[i];
@@ -31,43 +40,29 @@ function verDatos() {
 const verEliminar= document.getElementById("eliminar");
 const  formulario= document.getElementById("eliminarEnter")
 const botonEli = document.getElementById("btonEliminar");
-const idinput= document.getElementById("idEliminar");
+var idinput= document.getElementById("idEliminar").value;;
+
+
+
 
 verEliminar.addEventListener("click", verEli);
 function verEli(){
     formulario.style.display = "block"   
 }
 
-botonEli.addEventListener("click", eliminarFuncion)
-function eliminarFuncion(){
-    const idEli = idinput.value;
-    const datos = JSON.parse(localStorage.getItem("Datos.json"));
-    if (datos) {
-        const products = datos.products; // Accedemos al array de productos
-        const eliminar = products.findIndex(i => i.id === parseInt(idEli));
-        if (eliminar !== -1) {
-            products.splice(eliminar, 1);
-        }
-        localStorage.setItem("Datos.json", JSON.stringify(datos));
-        console.log(datos);
-        verDatos()
-    } else {
-        console.log("No hay datos en el almacenamiento local");
-        
-    }
+botonEli.addEventListener("click", (e)=>{   
+    eliminarFuncion(idinput)
+})
+function eliminarFuncion(id){
+    const productos = datosJSon[0].products;
+    productos = productos.filter(Eliminar => Eliminar.id !== id)
+    console.log(productos)
 }
 
 //crear
 const ver=document.getElementById("crear")
 const CrearFormulario=document.getElementById("formularioCrear")
 const enviarCrear=document.getElementById("enviar")
-//inputs
-const idValue = document.getElementById("id").value;
-const nameValue = document.getElementById("name").value;
-const categoryValue = document.getElementById("category").value;
-const priceValue = document.getElementById("price").value;
-const quantityInStockValue = document.getElementById("quantityInStock").value;
-const supplierIdValue = document.getElementById("supplierId").value;
 
 ver.addEventListener("click", funcionCrear)
 function funcionCrear(){
@@ -91,18 +86,9 @@ function opcionCrear() {
         quantityInStock: quantityInStockValue,
         supplierId: supplierIdValue
     };
-
-    let datos = localStorage.getItem("Datos.json");
-    if (datos) {
-        datos = JSON.parse(datos);
-    }
-
-    datos.products.push(productoNuevo);
-    console.log(productoNuevo);
     
-    localStorage.setItem("Datos.json", JSON.stringify(datos));
-    console.log(datos);
-    
+    datosJSon[0].products.push(productoNuevo);
+    console.log(datosJSon);
 }
 
 //actualizar
@@ -124,28 +110,22 @@ function actualizarProducto() {
     const quantityInStockActualizarValue = document.getElementById("quantityInStockActualizar").value;
     const supplierIdActualizarValue = document.getElementById("supplierIdActualizar").value;
 
-    let datos = localStorage.getItem("Datos.json");
-    datos = JSON.parse(datos);
-    
+    const productos = datosJSon[0].products;
+    let Edit = productos.filter(Editar => Editar.id == idActualizarValue) 
+    console.log(Edit[0].name);
 
-    const productos = datos.products;
-    const productoActualizar = productos.find(producto => producto.id === idActualizarValue);
-    console.log(datos);
-
-    if (productoActualizar) {
-        productoActualizar.name = nameActualizarValue;
-        productoActualizar.category = categoryActualizarValue;
-        productoActualizar.price = priceActualizarValue;
-        productoActualizar.quantityInStock = quantityInStockActualizarValue;
-        productoActualizar.supplierId = supplierIdActualizarValue;
+    if (Edit) {
+        Edit[0].name = nameActualizarValue;
+        Edit[0].category = categoryActualizarValue;
+        Edit[0].price = priceActualizarValue;
+        Edit[0].quantityInStock = quantityInStockActualizarValue;
+        Edit[0].supplierId = supplierIdActualizarValue;
     
       // Actualizar el array de productos en localStorage
-        datos.products = productos;
-        localStorage.setItem("Datos.json", JSON.stringify(datos));
-        console.log(datos);
+        datosJSon[0].products = productos;
 
         alert("Producto actualizado con éxito!");
     } else {
-        alert("No se encontró el producto con el ID especificado");
+        alert("Producto no encontrado");
     }
 }

@@ -1,6 +1,13 @@
 const leerButton2 = document.getElementById("leer");
 leerButton2.addEventListener("click", verDatos2);
 
+let datosJSon= []
+fetch("Datos.json")
+.then(i => i.json())
+.then(ver => {
+    datosJSon.push(ver)
+})
+
 function verDatos2() {
     cont=1
     fetch("Datos.json")
@@ -46,6 +53,8 @@ function funcionCrear(){
 
 enviarCrear.addEventListener("click", opcionCrear)
 function opcionCrear() {
+    console.log(datosJSon);
+    
     const idValue = document.getElementById("id").value;
     const nameValue = document.getElementById("name").value;
     const phoneValue = document.getElementById("phone").value;
@@ -63,15 +72,6 @@ function opcionCrear() {
             }
         ]
     };
-
-    let datos = localStorage.getItem("Datos.json");
-    if (datos) {
-        datos = JSON.parse(datos);
-    }
-
-    datos.products.push(productoNuevo);
-    console.log(productoNuevo);
-    
-    localStorage.setItem("Datos.json", JSON.stringify(datos));
-    console.log(datos);
+    datosJSon[0].suppliers.push(productoNuevo);
+    console.log(datosJSon);
 }
