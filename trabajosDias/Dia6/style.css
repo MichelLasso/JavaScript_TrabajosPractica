@@ -54,6 +54,7 @@ body{
 #output{
     background-color: #1C282E;
     width: 60vw;
+    padding: 2vw;
     margin-top: 5vw;
     font-size: 1vw;
     margin-right: 9vw;

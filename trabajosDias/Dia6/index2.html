@@ -17,27 +17,43 @@
                 <button id="eliminar">Eliminar</button>
             </div>
             <div id="output">
-                <div id="formularo">
-                    <label for="id">id</label>
-                    <input type="text" id="id">
+                <div id="formularioCrear" style="display: none;">
+                    <input type="text" id="id" placeholder="id">
                     <br>
-                    <label for="name">name</label>
-                    <input type="name" id="name">
+                    <input type="name" id="name" placeholder="Name">
                     <br>
-                    <label for="category">category</label>
-                    <input type="text" id="category">
+                    <input type="text" id="category" placeholder="category">
                     <br>
-                    <label for="price">price</label>
-                    <input type="text" id="price">
+                    <input type="text" id="price" placeholder="price">
                     <br>
-                    <label for="quantityInStock">quantity In Stock</label>
-                    <input type="text" id="quantityInStock">
+                    <input type="text" id="quantityInStock" placeholder="quantityInStock">
                     <br>
-                    <label for="supplierId">supplier Id</label>
-                    <input type="text" id="supplierId">
+                    <input type="text" id="supplierId" placeholder="supplierId">
                     <br>
                     <button id="enviar" type="submit">Enviar</button>
                 </div>
+                <div id="eliminarEnter" style="display: none;">
+                    <input type="number" id="idEliminar" placeholder="ingrese el id a eliminar">
+                    <button id="btonEliminar">Eliminar</button>
+                </div>
+                <div id="formularioActualizar" style="display: none;">
+                    <h2>Actualizar producto</h2>
+                    <label for="idActualizar">Ingrese el ID del producto a actualizar:</label>
+                    <input type="number" id="idActualizar" placeholder="ID del producto">
+    
+                    <div id="camposActualizar">
+                        <input type="text" id="nameActualizar" placeholder="Nombre del producto">
+                        <br>
+                        <input type="text" id="categoryActualizar" placeholder="Categoría del producto">
+                        <br>
+                        <input type="number" id="priceActualizar" placeholder="Precio del producto">
+                        <br>
+                        <input type="number" id="quantityInStockActualizar" placeholder="Cantidad en stock del producto">
+                        <br>
+                        <input type="number" id="supplierIdActualizar" placeholder="ID del proveedor del producto">
+                        <br>
+                        <button id="actualizarProducto">Actualizar</button>
+                    </div>
             </div>
         </div>
         
