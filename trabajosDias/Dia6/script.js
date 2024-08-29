@@ -12,52 +12,50 @@ fetch("Datos.json")
 })
 
 function verDatos() {
-    
-    if (datosJSon) {
-        const products = datosJSon[0].products; 
-        document.getElementById("output").innerHTML = ""; 
-        for (let i = 0; i < products.length; i++) {
-            const product = products[i];
-            document.getElementById("output").innerHTML += `
-            -                -                  -
-            <h1> Producto ${cont}</h1>
-            <h4>Id: ${product.id}</h1>
-            <h4>Name: ${product.name}</h1>
-            <h4>Category: ${product.category}</h1>
-            <h4>Price: ${product.price}</h1>
-            <h4>Quantity In Stock: ${product.quantityInStock}</h1>
-            <h4>Supplier Id: ${product.supplierId}</h1>
-            -                -                  -
-            `;
-            cont = cont + 1;
-        }
-    } else {
-        console.log("No hay datos en el almacenamiento local");
+    var cont=1
+    console.log(datosJSon);
+    for (i in datosJSon[0].products){
+        document.getElementById("output").innerHTML +=`
+        <h1>-----Productos ${cont}----</h3>
+        <h3>id: ${datosJSon[0].products[i]["id"]} </h3>
+        <h3>name: ${datosJSon[0].products[i]["name"]} </h3>
+        <h3>category: ${datosJSon[0].products[i]["category"]} </h3>
+        <h3>price: ${datosJSon[0].products[i]["price"]} </h3>
+        <h3>quantity In Stock: ${datosJSon[0].products[i]["quantityInStock"]} </h3>
+        <h3>supplier Id: ${datosJSon[0].products[i]["supplierId"]} </h3>
+        
+        `
+        cont=cont+1
     }
+    
 }
 
 //eliminar
 const verEliminar= document.getElementById("eliminar");
 const  formulario= document.getElementById("eliminarEnter")
 const botonEli = document.getElementById("btonEliminar");
-var idinput= document.getElementById("idEliminar").value;;
-
-
 
 
 verEliminar.addEventListener("click", verEli);
 function verEli(){
     formulario.style.display = "block"   
 }
+botonEli.addEventListener("click", borrar)
 
-botonEli.addEventListener("click", (e)=>{   
-    eliminarFuncion(idinput)
-})
-function eliminarFuncion(id){
-    const productos = datosJSon[0].products;
-    productos = productos.filter(Eliminar => Eliminar.id !== id)
-    console.log(productos)
+function borrar() {
+    var idinput= document.getElementById("idEliminar").value;;
+    const indice = datosJSon[0]["products"].findIndex(producto => producto.id === parseInt(idinput));
+    
+    if (indice !== -1) {
+        datosJSon[0]["products"].splice(indice, 1)
+        console.log(datosJSon[0]["products"]);
+        alert("Producto Eliminado con Exito")
+    } else {
+        alert("No se encontró el producto con el ID ingresado");
+    }
 }
+
+
 
 //crear
 const ver=document.getElementById("crear")
@@ -97,8 +95,8 @@ const botonEnviar=document.getElementById("actualizarProducto")
 const botonActu= document.getElementById("actualizar")
 
 botonEnviar.addEventListener("click", actualizarProducto)
-
 botonActu.addEventListener("click", funcionVerFor)
+
 function funcionVerFor(){
     aparecer.style.display= "block"
 }
