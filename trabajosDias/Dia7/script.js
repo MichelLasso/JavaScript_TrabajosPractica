@@ -17,7 +17,7 @@ const workContainer = document.getElementById("work");
 const connections = document.getElementById("connections");
 const imageContainer = document.getElementById("image");
 
-powerstatsContainer.innerHTML = ""; 
+
 
 
 const enviarId= document.getElementById("enviarId")
@@ -25,7 +25,7 @@ const enviarId= document.getElementById("enviarId")
 enviarId.addEventListener("click", buscarId)
 
 function buscarId() {
-    
+
     const IdUsurio = document.getElementById("idUsuario").value;
     const busca = Datos.filter((item) => item.id === IdUsurio);
 
@@ -42,6 +42,7 @@ function buscarId() {
         var imageV= buscarName[0].image;
         console.log(imageV);
         
+            powerstatsContainer.innerHTML = "";
             powerstatsContainer.innerHTML += `
                     <div id="titulo1">PowerStats</div>
                     <div id="text1">intelligence: ${powerstatsV.intelligence}</div>
