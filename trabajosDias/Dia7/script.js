@@ -25,6 +25,7 @@ const enviarId= document.getElementById("enviarId")
 enviarId.addEventListener("click", buscarId)
 
 function buscarId() {
+    
     const IdUsurio = document.getElementById("idUsuario").value;
     const busca = Datos.filter((item) => item.id === IdUsurio);
 
@@ -81,8 +82,7 @@ function buscarId() {
                 <div id="text3">relatives :${connectionsV["relatives"]}</div>
             `
             imageContainer.innerHTML +=`
-                <div id="titulo1">${buscarName.name}</div>
-                <img src="${imageV["image"]}" alt="">
+                <img src="${imageV["url"]}" alt="">
             `
     }
     else{
@@ -94,7 +94,7 @@ function buscarId() {
         var weightV= appearanceV.weight
         var workV= busca[0].work;
         var connectionsV= busca[0].connections;
-        var imageV= busca[0].image;
+        var imageV= busca[0].image.url;
         console.log(imageV);
         
             powerstatsContainer.innerHTML += `
@@ -138,8 +138,8 @@ function buscarId() {
                 <div id="text3">relatives :${connectionsV["relatives"]}</div>
             `
             imageContainer.innerHTML +=`
-                <div id="titulo1">${buscarName.name}</div>
-                <img src="${imageV["image"]}" alt="">
+                
+                <img src="${imageV}" id="imagen">
             `
     }
 }
