@@ -2,6 +2,94 @@ fetch("https://swapi.py4e.com/api/people/1/")
 .then( res => res.json())
 .then(data=>{
     funcionEnter(data)
+
+    let filmes= data.films;
+    filmes.forEach(peli=>{
+        fetch(peli)
+        .then(res=> res.json())
+        .then(newPeli =>{
+            
+                let PrimerCont= document.getElementById("cont1");
+                
+                PrimerCont.innerHTML += `
+                    <tr>
+                                <td class="table-dark">Films:</td>
+                                <td class="table-dark">
+                                    <div class="card text-bg-light mb-3" style="max-width: 50vw;">
+                                        <div class="card-body">
+                                            <table class="table">
+                                                <thead class="table-light">Name:</thead>
+                                                <tbody>
+                                                    ${newPeli.title}
+                                                </tbody>
+                                            </table>
+            
+                                            <table class="table">
+                                                <thead class="table-light">Episode id:</thead>
+                                                <tbody>
+                                                ${newPeli.episode_id}
+                                                </tbody>
+                                            </table>
+            
+                                            <table class="table">
+                                                <thead class="table-light">Opening crawl:</thead>
+                                                <tbody>
+                                                ${newPeli.opening_crawl}
+                                                </tbody>
+                                            </table>
+            
+                                            <table class="table">
+                                                <thead class="table-light">Director:</thead>
+                                                <tbody>
+                                                ${newPeli.director}
+                                                </tbody>
+                                            </table>
+            
+                                            <table class="table">
+                                                <thead class="table-light">Producer:</thead>
+                                                <tbody>
+                                                ${newPeli.producer}
+                                                </tbody>
+                                            </table>
+            
+                                            <table class="table">
+                                                <thead class="table-light">Release date:</thead>
+                                                <tbody>
+                                                ${newPeli.release_date}
+                                                </tbody>
+                                            </table>
+            
+                                            <table class="table">
+                                                <thead class="table-light">Created:</thead>
+                                                <tbody>
+                                                ${newPeli.created}
+                                                </tbody>
+                                            </table>
+            
+                                            <table class="table">
+                                                <thead class="table-light">Edited:</thead>
+                                                <tbody>
+                                                ${newPeli.edited}
+                                                </tbody>
+                                            </table>
+            
+                                            <table class="table">
+                                                <thead class="table-light">Url:</thead>
+                                                <tbody>
+                                                ${newPeli.url}
+                                                </tbody>
+                                            </table>
+            
+                                        </div>
+                                    </div>
+                                    <td class="table-dark"></td>
+                                </td>
+                                
+                            </tr>
+                `
+            
+        })
+    })
 })
 
 fetch("https://swapi.py4e.com/api/planets/1/")
@@ -10,11 +98,7 @@ fetch("https://swapi.py4e.com/api/planets/1/")
     planets(data2)
 })
 
-fetch("https://swapi.py4e.com/api/films/1/")
-.then( resp => resp.json())
-.then(data3=>{
-    films(data3)
-})
+
 
 fetch("https://swapi.py4e.com/api/species/1/")
 .then(res=> res.json())
@@ -33,6 +117,7 @@ fetch("https://swapi.py4e.com/api/starships/12/")
 .then(data6=> {
     starship(data6)
 })
+
 function funcionEnter(data) {
     let PrimerCont= document.getElementById("cont1");
 
@@ -181,86 +266,7 @@ function planets(data2) {
     `
 }
 
-function films(data3){
-    let PrimerCont= document.getElementById("cont1");
-    
-    PrimerCont.innerHTML += `
-        <tr>
-                    <td class="table-dark">Films:</td>
-                    <td class="table-dark">
-                        <div class="card text-bg-light mb-3" style="max-width: 50vw;">
-                            <div class="card-body">
-                                <table class="table">
-                                    <thead class="table-light">Name:</thead>
-                                    <tbody>
-                                        ${data3.title}
-                                    </tbody>
-                                </table>
 
-                                <table class="table">
-                                    <thead class="table-light">Episode id:</thead>
-                                    <tbody>
-                                    ${data3.episode_id}
-                                    </tbody>
-                                </table>
-
-                                <table class="table">
-                                    <thead class="table-light">Opening crawl:</thead>
-                                    <tbody>
-                                    ${data3.opening_crawl}
-                                    </tbody>
-                                </table>
-
-                                <table class="table">
-                                    <thead class="table-light">Director:</thead>
-                                    <tbody>
-                                    ${data3.director}
-                                    </tbody>
-                                </table>
-
-                                <table class="table">
-                                    <thead class="table-light">Producer:</thead>
-                                    <tbody>
-                                    ${data3.producer}
-                                    </tbody>
-                                </table>
-
-                                <table class="table">
-                                    <thead class="table-light">Release date:</thead>
-                                    <tbody>
-                                    ${data3.release_date}
-                                    </tbody>
-                                </table>
-
-                                <table class="table">
-                                    <thead class="table-light">Created:</thead>
-                                    <tbody>
-                                    ${data3.created}
-                                    </tbody>
-                                </table>
-
-                                <table class="table">
-                                    <thead class="table-light">Edited:</thead>
-                                    <tbody>
-                                    ${data3.edited}
-                                    </tbody>
-                                </table>
-
-                                <table class="table">
-                                    <thead class="table-light">Url:</thead>
-                                    <tbody>
-                                    ${data3.url}
-                                    </tbody>
-                                </table>
-
-                            </div>
-                        </div>
-                        <td class="table-dark"></td>
-                    </td>
-                    
-                </tr>
-    `
-}
 
 function species(data4) {
     let PrimerCont= document.getElementById("cont1");
