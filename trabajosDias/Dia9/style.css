@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oxanium', cursive;
+}
+#contenedor{
+    width: 100vw;
+    height: 50vw;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to top,  #e4f2fd 0%, #abd5fa 49%, #73bbf6 100%);
+    align-items: center;
+    
+}
+.contEnter{
+    margin-top: -11.5vw;
+}
+#enter{
+    margin-left: 2VW;
+    width: 16vw;
+    height: 2vw;
+}
+.uno,.dos{
+    width: 7.6vw;
+    margin-left: 0.5vw;
+    height: 2.5vw;
+    margin-top: 4.7vw;
+    border-radius: 0.5vw;
+    border: 0;
+    background-color: #424242;
+    color: white;
+    font-size: 0.8vw;
+}
+.uno{
+    margin-left: 2vw;
+}
+#poke{
+    width: 6vw;
+    height: 6vw;
+    position: absolute;
+    margin-top: 10vw;
+    margin-left: -14.4vw;
+}
