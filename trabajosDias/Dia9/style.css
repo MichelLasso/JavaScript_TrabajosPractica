@@ -20,8 +20,12 @@
     margin-left: 2VW;
     width: 16vw;
     height: 2vw;
+    -webkit-box-shadow: -6px 5px 0px 0px rgb(93, 93, 93);
+    -moz-box-shadow: -6px 5px 0px 0px rgba(93, 93, 93);
+    box-shadow: -6px 5px 0px 0px rgba(93, 93, 93);
+    border-radius: 0.5vw;
 }
-.uno,.dos{
+#uno,#dos{
     width: 7.6vw;
     margin-left: 0.5vw;
     height: 2.5vw;
@@ -31,14 +35,31 @@
     background-color: #424242;
     color: white;
     font-size: 0.8vw;
+    -webkit-box-shadow: -6px 5px 0px 0px rgb(25, 25, 25);
+    -moz-box-shadow: -6px 5px 0px 0px rgba(25, 25, 25);
+    box-shadow: -6px 5px 0px 0px rgba(25, 25, 25);
+    cursor: pointer;
+    border-color: black;
 }
-.uno{
+#uno{
     margin-left: 2vw;
 }
 #poke{
-    width: 6vw;
-    height: 6vw;
+    width: 13.3vw;
+    height: 9vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    margin-top: 10vw;
-    margin-left: -14.4vw;
+    left: 42.4vw;
+    top: 18.4vw;
+}
+#name{
+    position: absolute;
+    top: 28vw;
+    left: 50vw;
+    width: 8vw;
+}
+#text1{
+    font-size: 1vw;
 }

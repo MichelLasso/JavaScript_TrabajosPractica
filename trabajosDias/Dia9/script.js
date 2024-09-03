@@ -1,39 +1,36 @@
-document.getElementById("enter").addEventListener("input", (realizar)=>{
+document.getElementById("enter").addEventListener(`input`, newApi)
+
+
+function newApi() {
     let idEnter= document.getElementById("enter").value;
+    idNew= idEnter
+    let api= "https://pokeapi.co/api/v2/pokemon/"+idEnter
+    mostrar(api)
+}
+function mostrar(api) {
+    fetch(api)
+    .then(res => res.json())
+    .then(pokeApi=>{
+        console.log(pokeApi);
+        document.getElementById("poke").innerHTML =""
+        document.getElementById("poke").innerHTML += `
+            <img src="${pokeApi.sprites.other.showdown.front_default}">
+            <audio autoplay src="${pokeApi.cries.latest}"></audio>
+        `
+        document.getElementById("name").innerHTML = ""
+        document.getElementById("name").innerHTML += `
+            <div id="text1">${pokeApi.id} ${pokeApi.forms[0].name}</div>
+        `
+    })
+}
+document.getElementById("uno").addEventListener("click",()=>{
+    idNew--;
+    let api= "https://pokeapi.co/api/v2/pokemon/"+idNew
+    mostrar(api)
+})
 
-    let api= "https://pokeapi.co/api/v2/pokemon/"
-
-    function pokeApi() {
-        fetch(api+idEnter)
-        .then(res => res.json())
-        .then(mostrarDatos=>{
-
-            let nameId= documen.getElementById("name");
-            nameId.innerHTML += `
-                ${mostrarDatos.id} - <span>${mostrarDatos.forms[0].name}</span>
-            `;
-
-            let mostrarGif= document.getElementById("poke");
-            mostrarGif.innerHTML += `
-                <audio autoplay src="${mostrarDatos.cries.latest}"></audio>
-                <img src="${mostrarDatos.sprites.other.shawdown.front_default}">
-            `;
-
-            document.getElementById("uno").addEventListener("click", (anterior)=>{
-                var anteriorId= mostrarDatos.id-1;
-                obtenerId= String(anteriorId);
-                pokeApi()
-
-            })
-
-            document.getElementById("dos").addEventListener("click", (siguiente=>{
-                console.log(mostrarDatos);
-
-                var siguienteId = mostrarDatos.id +1;
-                obtenerId = String(siguienteId);
-                pokeApi()
-                
-            }))
-        })
-    }
+document.getElementById("dos").addEventListener("click",()=>{
+    idNew++;
+    let api= "https://pokeapi.co/api/v2/pokemon/"+idNew
+    mostrar(api)
 })
