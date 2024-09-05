@@ -1,0 +1,133 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+#contPrincipal{
+    background-color: #26282a;
+    width: 100vw;
+    height: 25.5vw;
+}
+#contBlanco{
+    width: 100vw;
+    position: absolute;
+    top: 11vw;
+    display: flex;
+    justify-content: center;
+}
+#ContDatos{
+    background-color: #fefefe;
+    width: 60vw;
+    height: 30vw;
+    border-radius: 5px;
+}
+#contRaya{
+    background-color: #f7f7f7;
+    height: 10vw;
+    border-bottom: 1px solid #ededed;
+}
+#Contfoto{
+    margin-top: -7vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#img{
+    width: 9vw;
+    height: 9vw;
+    border-radius: 50%;
+    background-color: white;
+    padding: 4px;
+    border: 2px solid #ededed;
+}
+#introName{
+    text-align: center;
+    margin-top: 1.5vw;
+    color: #b6b6b6;
+}
+#name{
+    text-align: center;
+    margin-top: 0.5vw;
+    font-size: 3rem;
+}
+#Icons{
+    margin-top: 2vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+#imagen{
+    background-image: url(/trabajosDias/Dia11/img/card_icons.png);
+    width: 4vw;
+    height: 5vw;
+    transform: scale(0.8);
+    background-position-y: 5vw;
+}
+#imagen2{
+    background-image: url(/trabajosDias/Dia11/img/card_icons.png);
+    width: 4vw;
+    height: 5vw;
+    transform: scale(0.8);
+    background-position-x: -7vw;
+    background-position-y: 5vw;
+    margin-left: -7vw;
+}
+#imagen3{
+    background-image: url(/trabajosDias/Dia11/img/card_icons.png);
+    width: 4vw;
+    height: 5vw;
+    transform: scale(0.8);
+    background-position-x: -14vw;
+    background-position-y: 5vw;
+    margin-left: -7vw;
+}
+#imagen4{
+    background-image: url(/trabajosDias/Dia11/img/card_icons.png);
+    width: 4vw;
+    height: 5vw;
+    transform: scale(0.8);
+    background-position-x: -21vw;
+    background-position-y: 5vw;
+    margin-left: -7vw;
+}
+#imagen5{
+    background-image: url(/trabajosDias/Dia11/img/card_icons.png);
+    width: 4vw;
+    height: 5vw;
+    transform: scale(0.8);
+    background-position-x: -29vw;
+    background-position-y: 5vw;
+    margin-left: -7vw;
+}
+#imagen6{
+    background-image: url(/trabajosDias/Dia11/img/card_icons.png);
+    width: 4vw;
+    height: 5vw;
+    transform: scale(0.8);
+    background-position-x: 4vw;
+    background-position-y: 5vw;
+    margin-left: -7vw;
+}
+#imagen:hover{
+    background-position-y: -0.1vw;
+    transition: 0.5s;
+}
+#imagen2:hover{
+    background-position-y: -0.1vw;
+    transition: 0.5s;
+}
+#imagen3:hover{
+    background-position-y: -0.1vw;
+    transition: 0.5s;
+}
+#imagen4:hover{
+    background-position-y: -0.1vw;
+    transition: 0.5s;
+}
+#imagen5:hover{
+    background-position-y: -0.1vw;
+    transition: 0.5s;
+}
+#imagen6:hover{
+    background-position-y: -0.1vw;
+    transition: 0.5s;
+}
