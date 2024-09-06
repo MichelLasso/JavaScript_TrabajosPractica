@@ -38,6 +38,12 @@ function mostrarName() {
         <div id="introName">Hi, My name is</div>
         <div id="name">${nombre.first} ${random.results[0]["name"].last}</div>
     `
+    nameImg.style ="background-position-y: -0.1vw;"
+    emailImg.style ="background-position-y: -6rem;"
+    telefono_Img.style ="background-position-y: -6rem;"
+    calendario_Img.style ="background-position-y: -6rem;"
+    locacion_Img.style ="background-position-y: -6rem;"
+    contraseña_Img.style ="background-position-y: -6rem;"
 }
 function mostrarEmail() {
     
@@ -46,6 +52,13 @@ function mostrarEmail() {
         <div id="introName">My email address is</div>
         <div id="name">${random.results[0]["email"]}</div>
     `
+    emailImg.style ="background-position-y: -0.1vw;"
+    nameImg.style ="background-position-y: 6.1rem"
+    telefono_Img.style ="background-position-y: -6rem;"
+    calendario_Img.style ="background-position-y: -6rem;"
+    locacion_Img.style ="background-position-y: -6rem;"
+    contraseña_Img.style ="background-position-y: -6rem;"
+    
 }
 
 function mostrarTelefono() {
@@ -54,6 +67,12 @@ function mostrarTelefono() {
         <div id="introName">My phone number is</div>
         <div id="name">${random.results[0]["phone"]}</div>
     `
+    telefono_Img.style ="background-position-y: -0.1vw;"
+    emailImg.style ="background-position-y: -6rem;"
+    calendario_Img.style ="background-position-y: -6rem;"
+    locacion_Img.style ="background-position-y: -6rem;"
+    contraseña_Img.style ="background-position-y: -6rem;"
+    nameImg.style ="background-position-y: -6rem;"
 }
 
 function mostrarCalendario() {
@@ -62,6 +81,12 @@ function mostrarCalendario() {
         <div id="introName">My birthday is</div>
         <div id="name">${random.results[0]["dob"].date}</div>
     `
+    calendario_Img.style ="background-position-y: -0.1vw;"
+    emailImg.style ="background-position-y: -6rem;"
+    telefono_Img.style ="background-position-y: -6rem;"
+    nameImg.style ="background-position-y: -6rem;"
+    locacion_Img.style ="background-position-y: -6rem;"
+    contraseña_Img.style ="background-position-y: -6rem;"
 }
 
 function mostrarLugar() {
@@ -70,6 +95,12 @@ function mostrarLugar() {
         <div id="introName">My address is</div>
         <div id="name">${random.results[0]["location"].postcode} ${random.results[0]["location"].city}</div>
     `
+    locacion_Img.style ="background-position-y: -0.1vw;"
+    emailImg.style ="background-position-y: -6rem;"
+    telefono_Img.style ="background-position-y: -6rem;"
+    calendario_Img.style ="background-position-y: -6rem;"
+    contraseña_Img.style ="background-position-y: -6rem;"
+    nameImg.style ="background-position-y: -6rem;"
 }
 
 function mostrarContraseña() {
@@ -78,4 +109,10 @@ function mostrarContraseña() {
         <div id="introName">My password is</div>
         <div id="name">${random.results[0]["login"].password}</div>
     `
+    contraseña_Img.style ="background-position-y: -0.1vw;"
+    emailImg.style ="background-position-y: -6rem;"
+    telefono_Img.style ="background-position-y: -6rem;"
+    calendario_Img.style ="background-position-y: -6rem;"
+    locacion_Img.style ="background-position-y: -6rem;"
+    nameImg.style ="background-position-y: -6rem;"
 }
