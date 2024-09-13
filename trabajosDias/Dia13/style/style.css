@@ -201,7 +201,7 @@ h3{
     font-family: poker;
     color: red;
     position: relative;
-    font-size: 17rem;
+    font-size: 15rem;
     animation-name: perdedor;
     animation-duration: 3s;
     animation-fill-mode: forwards; /* Add this property */
@@ -354,6 +354,6 @@ h3{
 
     }
     #perder{
-        font-size: 7rem;
+        font-size: 5rem;
     }
 }
