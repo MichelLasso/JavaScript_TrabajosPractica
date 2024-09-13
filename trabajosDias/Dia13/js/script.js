@@ -134,8 +134,10 @@ function dato1() {
                     todo.innerHTML = `
                         <div id="perder">¡Felicidades!</div>
                     `
+                    setTimeout(() => {
+                        dato1()
+                    }, "3000");
                     
-                    dato1()
 
                 }
                 else{
@@ -147,9 +149,12 @@ function dato1() {
                     `
                     const todo = document.getElementById("carta2");
                     todo.innerHTML = `
-                        <div id="perder">Vuelve a intentarlo :(</div>
+                        <div id="perder">Vuelve <span> a intentarlo</span>:(</div>
                     `
-                    dato1()
+                    setTimeout(() => {
+                        dato1()
+                    }, "3000");
+                    
                 }
             }
             function detectarId2(){
@@ -165,7 +170,9 @@ function dato1() {
                     todo.innerHTML = `
                         <div id="perder">¡Felicidades!</div>
                     `
-                    dato1()
+                    setTimeout(() => {
+                        dato1()
+                    }, "3000");
                 }
                 else{
                     
@@ -175,9 +182,11 @@ function dato1() {
                     `
                     const todo = document.getElementById("carta2");
                     todo.innerHTML = `
-                        <div id="perder">Vuelve a intentarlo :(</div>
+                        <div id="perder">Vuelve<span> a intentarlo</span>:(</div>
                     `
-                    dato1()
+                    setTimeout(() => {
+                        dato1()
+                    }, "3000");
                 }
             }
             function detectarId3(){
@@ -193,7 +202,9 @@ function dato1() {
                     todo.innerHTML = `
                         <div id="perder">¡Felicidades!</div>
                     `
-                    dato1()
+                    setTimeout(() => {
+                        dato1()
+                    }, "3000");
                 }
                 else{
                     
@@ -203,9 +214,11 @@ function dato1() {
                     `
                     const todo = document.getElementById("carta2");
                     todo.innerHTML = `
-                        <div id="perder">Vuelve a intentarlo :(</div>
+                        <div id="perder">Vuelve<span> a intentarlo</span>:(</div>
                     `
-                    dato1()
+                    setTimeout(() => {
+                        dato1()
+                    }, "3000");
                 }
             }
             function detectarId4(){
@@ -221,7 +234,9 @@ function dato1() {
                     todo.innerHTML = `
                         <div id="perder">¡Felicidades!</div>
                     `
-                    dato1()
+                    setTimeout(() => {
+                        dato1()
+                    }, "3000");
                 }
                 else{
                     
@@ -231,9 +246,11 @@ function dato1() {
                     `
                     const todo = document.getElementById("carta2");
                     todo.innerHTML = `
-                        <div id="perder">Vuelve a intentarlo :(</div>
+                        <div id="perder">Vuelve<span> a intentarlo</span>:(</div>
                     `
-                    dato1()
+                    setTimeout(() => {
+                        dato1()
+                    }, "3000");
                 }
             }
             function detectarId5(){
@@ -249,7 +266,9 @@ function dato1() {
                     todo.innerHTML = `
                         <div id="perder">¡Felicidades!</div>
                     `
-                    dato1()
+                    setTimeout(() => {
+                        dato1()
+                    }, "3000");
                 }
                 else{
                     
@@ -259,9 +278,11 @@ function dato1() {
                     `
                     const todo = document.getElementById("carta2");
                     todo.innerHTML = `
-                        <div id="perder">Vuelve a intentarlo :(</div>
+                        <div id="perder">Vuelve <span> a intentarlo</span>:(</div>
                     `
-                    dato1()
+                    setTimeout(() => {
+                        dato1()
+                    }, "3000");
                 }
             }
             function detectarId6(){
@@ -277,7 +298,9 @@ function dato1() {
                     todo.innerHTML = `
                         <div id="perder">¡Felicidades!</div>
                     `
-                    dato1()
+                    setTimeout(() => {
+                        dato1()
+                    }, "3000");
                     
                 }
                 else{
@@ -288,9 +311,11 @@ function dato1() {
                     `
                     const todo = document.getElementById("carta2");
                     todo.innerHTML = `
-                        <div id="perder">Vuelve a intentarlo :(</div>
+                        <div id="perder">Vuelve<span> a intentarlo</span>:(</div>
                     `
-                    dato1()
+                    setTimeout(() => {
+                        dato1()
+                    }, "3000");
                 }
             }
             function detectarId7(){
@@ -306,7 +331,9 @@ function dato1() {
                     todo.innerHTML = `
                         <div id="perder">¡Felicidades!</div>
                     `
-                    dato1()
+                    setTimeout(() => {
+                        dato1()
+                    }, "3000");
                     
                 }
                 else{
@@ -317,9 +344,11 @@ function dato1() {
                     `
                     const todo = document.getElementById("carta2");
                     todo.innerHTML = `
-                        <div id="perder">Vuelve a intentarlo :(</div>
+                        <div id="perder">Vuelve<span> a intentarlo</span>:(</div>
                     `
-                    dato1()
+                    setTimeout(() => {
+                        dato1()
+                    }, "3000");
                     
                 }
             }
