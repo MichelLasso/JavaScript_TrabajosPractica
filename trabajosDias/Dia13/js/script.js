@@ -36,13 +36,6 @@ function dato1() {
             var idRandomCard= randomCard.code
             console.log(idRandomCard);
 
-            function RespuestaCorrecta() {
-                
-                document.getElementById("carta2").innerHTML = `
-                    <button id="mostrar">Mostrar Carta</button>
-                    <img src="${randomCard.image}">
-                `
-            }
             
             document.getElementById("carta").innerHTML = `
                 
@@ -63,11 +56,45 @@ function dato1() {
                 <img src="${cartas.cards[4].image}" class="img" id="cartaElegida5">
                 <img src="${cartas.cards[5].image}" class="img" id="cartaElegida6">
                 <img src="${cartas.cards[6].image}" class="img" id="cartaElegida7">
-                <div class="tablaPuntaje">
-                    <div class="partidasGanadas">Partidas Ganadas: ${PartidasGanadas}</div>
-                    <div class="partidasPerdidas">Partidas Perdidas: ${PartidasPerdidas}</div>
-                </div>
+                
+                <div class="contBotoPuntaje"> 
+                    <div class="tablaPuntaje">
+                        <div class="partidasGanadas">Partidas Ganadas: ${PartidasGanadas}</div>
+                        <div class="partidasPerdidas">Partidas Perdidas: ${PartidasPerdidas}</div>
+                    </div>
+                    
+                        <button class="menu"><a href="/trabajosDias/Dia13/index.html" class="link">Menú</a></button>
+                        <button id="instrucciones">?</button>
+
+                    
+                <div>
+
             `
+            let explicar = document.getElementById("instrucciones");
+            explicar.addEventListener("click", mostrarModoJuego)
+
+            function mostrarModoJuego() {
+                document.getElementById("carta").innerHTML = `
+                    <div id="modoDeJuego">
+                            <h3>¡Adivina la Carta Escondida!</h3><br>
+                            <h4>Demuestra tus habilidades y confía en tu intuición para ganar. El objetivo es adivinar la carta que se encuentra en incógnito. ¡Si aciertas, ganas!</h4>
+                            <br>
+                            <h3>¿Cuál es la carta escondida?</h3>
+                            <h4>
+                                <br>Elige una carta del mazo para tratar de adivinar la carta escondida.
+                                <br> Si aciertas, ganas una partida. Si fallas, pierdes una partida.
+                                <br>Visualiza tus partidas ganadas y perdidas.
+                            </h4>
+                    </div>
+                `
+                let modo = document.getElementById("modoDeJuego");
+                modo.addEventListener("click", quitar)
+
+                function quitar() {
+                    modo.style= "display:none"
+                }
+
+            }
             console.log(cartas.cards);
             
             const imagen1= document.getElementById("cartaElegida");
@@ -96,23 +123,31 @@ function dato1() {
                 console.log(idCartaUsuario);
                 if(idCartaUsuario===idRandomCard){
                     
-                    alert("woaAA")
+                    alert("Excelenteee!!!")
 
                     PartidasGanadas = PartidasGanadas+1
 
                     document.getElementById("carta").innerHTML = `
                         <img src="${randomCard.image}" class="img" id="cartaRandom">
                     `
+                    const todo = document.getElementById("carta2");
+                    todo.innerHTML = `
+                        <div id="perder">Ganastee!!</div>
+                    `
                     
                     dato1()
 
                 }
                 else{
-                    alert("nadaaaaaa:(")
+                    
                     PartidasPerdidas= PartidasPerdidas+1
 
                     document.getElementById("carta").innerHTML = `
                         <img src="${randomCard.image}" class="img">
+                    `
+                    const todo = document.getElementById("carta2");
+                    todo.innerHTML = `
+                        <div id="perder">Lo$er</div>
                     `
                     dato1()
                 }
@@ -121,18 +156,26 @@ function dato1() {
                 const idCartaUsuario= cartas.cards[1].code
                 console.log(idCartaUsuario);
                 if(idCartaUsuario===idRandomCard){
-                    alert("woaAA")
+
                     PartidasGanadas = PartidasGanadas+1
                     document.getElementById("carta").innerHTML = `
                         <img src="${randomCard.image}" class="img" id="cartaRandom">
                     `
+                    const todo = document.getElementById("carta2");
+                    todo.innerHTML = `
+                        <div id="perder">Ganastee!!</div>
+                    `
                     dato1()
                 }
                 else{
-                    alert("nadaaaaaa:(")
+                    
                     PartidasPerdidas= PartidasPerdidas+1
                     document.getElementById("carta").innerHTML = `
                         <img src="${randomCard.image}" class="img" id="cartaRandom">
+                    `
+                    const todo = document.getElementById("carta2");
+                    todo.innerHTML = `
+                        <div id="perder">Lo$er</div>
                     `
                     dato1()
                 }
@@ -141,18 +184,26 @@ function dato1() {
                 const idCartaUsuario= cartas.cards[2].code
                 console.log(idCartaUsuario);
                 if(idCartaUsuario===idRandomCard){
-                    alert("woaAA")
+                    alert("Excelenteee!!!")
                     PartidasGanadas = PartidasGanadas+1
                     document.getElementById("carta").innerHTML = `
                         <img src="${randomCard.image}" class="img" id="cartaRandom">
                     `
+                    const todo = document.getElementById("carta2");
+                    todo.innerHTML = `
+                        <div id="perder">Ganastee!!</div>
+                    `
                     dato1()
                 }
                 else{
-                    alert("nadaaaaaa:(")
+                    
                     PartidasPerdidas= PartidasPerdidas+1
                     document.getElementById("carta").innerHTML = `
                         <img src="${randomCard.image}" class="img" id="cartaRandom">
+                    `
+                    const todo = document.getElementById("carta2");
+                    todo.innerHTML = `
+                        <div id="perder">Lo$er</div>
                     `
                     dato1()
                 }
@@ -161,18 +212,26 @@ function dato1() {
                 const idCartaUsuario= cartas.cards[3].code
                 console.log(idCartaUsuario);
                 if(idCartaUsuario===idRandomCard){
-                    alert("woaAA")
+                    alert("Excelenteee!!!")
                     PartidasGanadas = PartidasGanadas+1
                     document.getElementById("carta").innerHTML = `
                         <img src="${randomCard.image}" class="img" id="cartaRandom">
                     `
+                    const todo = document.getElementById("carta2");
+                    todo.innerHTML = `
+                        <div id="perder">Ganastee!!</div>
+                    `
                     dato1()
                 }
                 else{
-                    alert("nadaaaaaa:(")
+                    
                     PartidasPerdidas= PartidasPerdidas+1
                     document.getElementById("carta").innerHTML = `
                         <img src="${randomCard.image}" class="img" id="cartaRandom">
+                    `
+                    const todo = document.getElementById("carta2");
+                    todo.innerHTML = `
+                        <div id="perder">Lo$er</div>
                     `
                     dato1()
                 }
@@ -181,18 +240,26 @@ function dato1() {
                 const idCartaUsuario= cartas.cards[4].code
                 console.log(idCartaUsuario);
                 if(idCartaUsuario===randomCard){
-                    alert("woaAA")
+                    alert("Excelenteee!!!")
                     PartidasGanadas = PartidasGanadas+1
                     document.getElementById("carta").innerHTML = `
                         <img src="${randomCard.image}" class="img" id="cartaRandom">
                     `
+                    const todo = document.getElementById("carta2");
+                    todo.innerHTML = `
+                        <div id="perder">Ganastee!!</div>
+                    `
                     dato1()
                 }
                 else{
-                    alert("nadaaaaaa:(")
+                    
                     PartidasPerdidas= PartidasPerdidas+1
                     document.getElementById("carta").innerHTML = `
                         <img src="${randomCard.image}" class="img" id="cartaRandom">
+                    `
+                    const todo = document.getElementById("carta2");
+                    todo.innerHTML = `
+                        <div id="perder">Lo$er</div>
                     `
                     dato1()
                 }
@@ -201,19 +268,27 @@ function dato1() {
                 const idCartaUsuario= cartas.cards[5].code
                 console.log(idCartaUsuario);
                 if(idCartaUsuario===idRandomCard){
-                    alert("woaAA")
+                    alert("Excelenteee!!!")
                     PartidasGanadas = PartidasGanadas+1
                     document.getElementById("carta").innerHTML = `
                         <img src="${randomCard.image}" class="img" id="cartaRandom">
+                    `
+                    const todo = document.getElementById("carta2");
+                    todo.innerHTML = `
+                        <div id="perder">Ganastee!!</div>
                     `
                     dato1()
                     
                 }
                 else{
-                    alert("nadaaaaaa:(")
+                    
                     PartidasPerdidas= PartidasPerdidas+1
                     document.getElementById("carta").innerHTML = `
                         <img src="${randomCard.image}" class="img" id="cartaRandom">
+                    `
+                    const todo = document.getElementById("carta2");
+                    todo.innerHTML = `
+                        <div id="perder">Lo$er</div>
                     `
                     dato1()
                 }
@@ -222,19 +297,27 @@ function dato1() {
                 const idCartaUsuario= cartas.cards[6].code
                 console.log(idCartaUsuario);
                 if(idCartaUsuario===idRandomCard){
-                    alert("woaAA")
+                    alert("Excelenteee!!!")
                     PartidasGanadas = PartidasGanadas+1
                     document.getElementById("carta").innerHTML = `
                         <img src="${randomCard.image}" class="img" id="cartaRandom">
+                    `
+                    const todo = document.getElementById("carta2");
+                    todo.innerHTML = `
+                        <div id="perder">Ganastee!!</div>
                     `
                     dato1()
                     
                 }
                 else{
-                    alert("nadaaaaaa:(")
+                    
                     PartidasPerdidas= PartidasPerdidas+1
                     document.getElementById("carta").innerHTML = `
                         <img src="${randomCard.image}" class="img" id="cartaRandom">
+                    `
+                    const todo = document.getElementById("carta2");
+                    todo.innerHTML = `
+                        <div id="perder">Lo$er</div>
                     `
                     dato1()
                     
@@ -249,4 +332,3 @@ function dato1() {
 
 
 
-//crear variable en el if para crear partida nueva y guardar las ganadas y perdidas y mostrarlas en una tabla y agg estilos y el modo de uso 

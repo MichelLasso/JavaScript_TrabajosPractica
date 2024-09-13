@@ -10,13 +10,15 @@
     font-family: poker;
     src: url(/trabajosDias/Dia13/fonts/Poker.ttf);
 }
+
 .todoElTrabajo{
     width: 100vw;
-    height: 59rem;
+    overflow: hidden;
+    height: 70rem;
     background: radial-gradient(#5c5c5c, black);
 }
 #entrada{
-    width: 100vw;
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -50,7 +52,6 @@ span{
 }
 #carta2{
     width: 90vw;
-    margin-left: 12rem;
     height: 20rem;
     display: flex;
     justify-content: center;
@@ -58,10 +59,12 @@ span{
 }
 .img{
     width: 11rem;
+    margin-top: 2rem;
     height: 16rem;
     box-shadow: 0 4px 8px 0 rgb(5, 0, 0), 0 6px 20px 0 rgb(150, 150, 150);
     display: grid;
     margin-left: 0.5rem;
+    cursor: pointer;
 }
 .imgAdivina{
     width: 11rem;
@@ -80,9 +83,9 @@ span{
 }
 
 .tablaPuntaje{
-    width: 12rem;
+    width: 15rem;
+    margin-top: 3rem;
     height: 4rem;
-    margin-left: 5rem;
     background-color: #5c5c5c;
     color: #ffffffd0;
     font-size: 1.3rem;
@@ -92,6 +95,12 @@ span{
     justify-content: space-between;
     border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgb(5, 0, 0), 0 6px 20px 0 rgb(150, 150, 150);
+}
+.tablaPuntaje:hover{
+    background-color: black;
+    color: rgb(226, 226, 226);
+    box-shadow: 0 4px 8px 0 rgba(226, 226, 226, 0.363), 0 6px 20px 0 rgba(255, 255, 255, 0.479);
+
 }
 .cartAdivinarText{
     margin-top: -16rem;
@@ -114,6 +123,7 @@ span{
 }
 #empezar{
     width: 10rem;
+    cursor: pointer;
     height: 3.5rem;
     border-radius: 20px;
     border: 3px solid rgb(226, 226, 226);
@@ -125,6 +135,44 @@ span{
     box-shadow: 0 4px 8px 0 rgba(226, 226, 226, 0.363), 0 6px 20px 0 rgba(255, 255, 255, 0.479);
 
 }
+.menu,#instrucciones{
+    width: 9rem;
+    height: 3rem;
+    border-radius: 20px;
+    border: 1px solid rgb(226, 226, 226);
+    margin-left: 3.5rem;
+    margin-top: 1rem;
+    color: white;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    background-color: #5c5c5c;
+    box-shadow: 0 4px 8px 0 rgba(94, 90, 90, 0.596), 0 6px 20px 0 rgba(0, 0, 0, 0.479);
+}
+.link{
+    text-decoration: none;
+    color: #ffffffd0;
+}
+#instrucciones:hover{
+    background-color: black;
+    color: rgb(226, 226, 226);
+    transform: scale(1.2);
+    box-shadow: 0 4px 8px 0 rgba(226, 226, 226, 0.363), 0 6px 20px 0 rgba(255, 255, 255, 0.479);
+}
+.menu:hover{
+    background-color: black;
+    color: rgb(226, 226, 226);
+    transform: scale(1.2);
+    box-shadow: 0 4px 8px 0 rgba(226, 226, 226, 0.363), 0 6px 20px 0 rgba(255, 255, 255, 0.479);
+}
+.contBotoPuntaje{
+    width: 13rem;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    margin-left: 6rem;
+}
 .portadas{
     width: 26rem;
 }
@@ -135,4 +183,176 @@ span{
 #empezar:hover{
     transform: scale(1.2);
     transition: 1s;
+}
+#modoDeJuego{
+    width: 11rem;
+    border-radius: 10px;
+    height: 27rem;
+    padding: 0.5rem;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(226, 226, 226, 0.363), 0 6px 20px 0 rgba(255, 255, 255, 0.479);
+}
+h3{
+    font-family: letra;
+}
+#perder {
+    font-family: poker;
+    color: red;
+    position: relative;
+    font-size: 17rem;
+    animation-name: perdedor;
+    animation-duration: 3s;
+    animation-fill-mode: forwards; /* Add this property */
+}
+
+@keyframes perdedor {
+    20% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        transform: rotateZ(30deg);
+    }
+    100% {
+        display: none;
+    }
+}
+@media only screen and (max-width: 440px){
+    .todoElTrabajo{
+        height: 47rem;
+    }
+    #cartaRandom{
+        margin-top: -26rem;
+        width: 7rem;
+        height: 10rem;
+        margin-left: -1rem;
+    }
+    #entrada{
+        width: 100vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .textIntro{
+        font-size: 9rem;
+        padding: 1rem;        
+    }
+    #carta2{
+        width: 100vw;
+        height: 10rem;
+        margin-top: -46rem;
+    }
+    .img{
+        width: 5rem;
+        height: 7rem;
+    }
+    .imgAdivina{
+        margin-top: -26rem;
+        margin-left: 3.5rem;
+        width: 7rem;
+        height: 10rem;
+    }
+    
+    .cartAdivinarText,.cartAdivinarText2{
+        margin-left: 3.7rem;
+        width: 11rem;
+        height: 1.4rem;
+        font-size: 1.2rem;
+    }
+    
+    .DosColores{
+        font-size: 3rem;
+    }
+    .tablaPuntaje{
+        width: 20rem;
+        height: 1.5rem;
+        margin-left: -7.5rem;
+        font-size: 1.2rem;
+        display: flex;
+        flex-direction: row;
+    }
+    .cartAdivinarText{
+        margin-top: -9.8rem;
+    }
+    .cartAdivinarText2{
+        margin-left: -1rem;
+    }
+    .cartAdivinarTextBig{
+        width: 5rem;
+        height: 6.5rem;
+        margin-right: 5.1rem;
+    }
+    
+    #empezar{
+        width: 8rem;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid rgb(226, 226, 226);
+        font-size: 1.7rem;
+        font-family: poker;
+        margin-top: 2rem;
+    
+    }
+    .menu{
+        width: 4rem;
+        height: 2rem;
+        border-radius: 9px;
+        font-size: 1.2rem;    
+        margin-top: -40rem;
+        margin-left: -8rem;
+        background-color: black;
+    }
+    .menu:hover{
+        background-color: #5c5c5c;
+    }
+    .contBotoPuntaje{
+        width: 13rem;
+        height: 16rem;
+        display: flex;
+        flex-direction: column;
+    }
+    .portadas{
+        width: 20rem;
+    }
+    .img:hover{
+        transform: scale(1.1);
+        transition: 1s;
+    }
+    #empezar:hover{
+        transform: scale(1.1);
+        background-color: #5c5c5c;
+    }
+    #modoDeJuego{
+        width: 11rem;
+        margin-top: -26rem;
+        border-radius: 10px;
+        position: absolute;
+        font-size: 1rem;
+        display: grid;
+        height: 27rem;
+        padding: 0.5rem;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.363), 0 6px 20px 0 rgba(141, 66, 66, 0.918);
+        text-align: center;
+        background-color: rgb(255, 220, 220);
+    }
+    h3{
+        font-family: letra;
+    }
+    #instrucciones{
+        margin-left: 11rem;
+        margin-top: -2rem;
+        width: 4rem;
+        height: 2rem;
+        border-radius: 9px;
+        font-size: 1.2rem;
+
+    }
+    #perder{
+        font-size: 7rem;
+    }
 }
