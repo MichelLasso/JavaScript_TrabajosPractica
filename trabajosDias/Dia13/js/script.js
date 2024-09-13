@@ -123,7 +123,7 @@ function dato1() {
                 console.log(idCartaUsuario);
                 if(idCartaUsuario===idRandomCard){
                     
-                    alert("Excelenteee!!!")
+                    
 
                     PartidasGanadas = PartidasGanadas+1
 
@@ -132,7 +132,7 @@ function dato1() {
                     `
                     const todo = document.getElementById("carta2");
                     todo.innerHTML = `
-                        <div id="perder">Ganastee!!</div>
+                        <div id="perder">¡Felicidades!</div>
                     `
                     
                     dato1()
@@ -147,7 +147,7 @@ function dato1() {
                     `
                     const todo = document.getElementById("carta2");
                     todo.innerHTML = `
-                        <div id="perder">Lo$er</div>
+                        <div id="perder">Vuelve a intentarlo :(</div>
                     `
                     dato1()
                 }
@@ -163,7 +163,7 @@ function dato1() {
                     `
                     const todo = document.getElementById("carta2");
                     todo.innerHTML = `
-                        <div id="perder">Ganastee!!</div>
+                        <div id="perder">¡Felicidades!</div>
                     `
                     dato1()
                 }
@@ -175,7 +175,7 @@ function dato1() {
                     `
                     const todo = document.getElementById("carta2");
                     todo.innerHTML = `
-                        <div id="perder">Lo$er</div>
+                        <div id="perder">Vuelve a intentarlo :(</div>
                     `
                     dato1()
                 }
@@ -184,14 +184,14 @@ function dato1() {
                 const idCartaUsuario= cartas.cards[2].code
                 console.log(idCartaUsuario);
                 if(idCartaUsuario===idRandomCard){
-                    alert("Excelenteee!!!")
+                    
                     PartidasGanadas = PartidasGanadas+1
                     document.getElementById("carta").innerHTML = `
                         <img src="${randomCard.image}" class="img" id="cartaRandom">
                     `
                     const todo = document.getElementById("carta2");
                     todo.innerHTML = `
-                        <div id="perder">Ganastee!!</div>
+                        <div id="perder">¡Felicidades!</div>
                     `
                     dato1()
                 }
@@ -203,7 +203,7 @@ function dato1() {
                     `
                     const todo = document.getElementById("carta2");
                     todo.innerHTML = `
-                        <div id="perder">Lo$er</div>
+                        <div id="perder">Vuelve a intentarlo :(</div>
                     `
                     dato1()
                 }
@@ -212,14 +212,14 @@ function dato1() {
                 const idCartaUsuario= cartas.cards[3].code
                 console.log(idCartaUsuario);
                 if(idCartaUsuario===idRandomCard){
-                    alert("Excelenteee!!!")
+                    
                     PartidasGanadas = PartidasGanadas+1
                     document.getElementById("carta").innerHTML = `
                         <img src="${randomCard.image}" class="img" id="cartaRandom">
                     `
                     const todo = document.getElementById("carta2");
                     todo.innerHTML = `
-                        <div id="perder">Ganastee!!</div>
+                        <div id="perder">¡Felicidades!</div>
                     `
                     dato1()
                 }
@@ -231,7 +231,7 @@ function dato1() {
                     `
                     const todo = document.getElementById("carta2");
                     todo.innerHTML = `
-                        <div id="perder">Lo$er</div>
+                        <div id="perder">Vuelve a intentarlo :(</div>
                     `
                     dato1()
                 }
@@ -240,14 +240,14 @@ function dato1() {
                 const idCartaUsuario= cartas.cards[4].code
                 console.log(idCartaUsuario);
                 if(idCartaUsuario===randomCard){
-                    alert("Excelenteee!!!")
+                    
                     PartidasGanadas = PartidasGanadas+1
                     document.getElementById("carta").innerHTML = `
                         <img src="${randomCard.image}" class="img" id="cartaRandom">
                     `
                     const todo = document.getElementById("carta2");
                     todo.innerHTML = `
-                        <div id="perder">Ganastee!!</div>
+                        <div id="perder">¡Felicidades!</div>
                     `
                     dato1()
                 }
@@ -259,7 +259,7 @@ function dato1() {
                     `
                     const todo = document.getElementById("carta2");
                     todo.innerHTML = `
-                        <div id="perder">Lo$er</div>
+                        <div id="perder">Vuelve a intentarlo :(</div>
                     `
                     dato1()
                 }
@@ -268,14 +268,14 @@ function dato1() {
                 const idCartaUsuario= cartas.cards[5].code
                 console.log(idCartaUsuario);
                 if(idCartaUsuario===idRandomCard){
-                    alert("Excelenteee!!!")
+                    
                     PartidasGanadas = PartidasGanadas+1
                     document.getElementById("carta").innerHTML = `
                         <img src="${randomCard.image}" class="img" id="cartaRandom">
                     `
                     const todo = document.getElementById("carta2");
                     todo.innerHTML = `
-                        <div id="perder">Ganastee!!</div>
+                        <div id="perder">¡Felicidades!</div>
                     `
                     dato1()
                     
@@ -288,7 +288,7 @@ function dato1() {
                     `
                     const todo = document.getElementById("carta2");
                     todo.innerHTML = `
-                        <div id="perder">Lo$er</div>
+                        <div id="perder">Vuelve a intentarlo :(</div>
                     `
                     dato1()
                 }
@@ -297,14 +297,14 @@ function dato1() {
                 const idCartaUsuario= cartas.cards[6].code
                 console.log(idCartaUsuario);
                 if(idCartaUsuario===idRandomCard){
-                    alert("Excelenteee!!!")
+                    
                     PartidasGanadas = PartidasGanadas+1
                     document.getElementById("carta").innerHTML = `
                         <img src="${randomCard.image}" class="img" id="cartaRandom">
                     `
                     const todo = document.getElementById("carta2");
                     todo.innerHTML = `
-                        <div id="perder">Ganastee!!</div>
+                        <div id="perder">¡Felicidades!</div>
                     `
                     dato1()
                     
@@ -317,7 +317,7 @@ function dato1() {
                     `
                     const todo = document.getElementById("carta2");
                     todo.innerHTML = `
-                        <div id="perder">Lo$er</div>
+                        <div id="perder">Vuelve a intentarlo :(</div>
                     `
                     dato1()
                     

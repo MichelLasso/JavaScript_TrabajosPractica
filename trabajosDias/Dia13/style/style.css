@@ -92,6 +92,7 @@ span{
     display: flex;
     flex-direction: column;
     padding: 1rem;
+    align-items: center;
     justify-content: space-between;
     border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgb(5, 0, 0), 0 6px 20px 0 rgb(150, 150, 150);
@@ -334,11 +335,11 @@ h3{
         position: absolute;
         font-size: 1rem;
         display: grid;
-        height: 27rem;
+        height: 31rem;
         padding: 0.5rem;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.363), 0 6px 20px 0 rgba(141, 66, 66, 0.918);
         text-align: center;
-        background-color: rgb(255, 220, 220);
+        background-color: rgb(177, 174, 174);
     }
     h3{
         font-family: letra;
