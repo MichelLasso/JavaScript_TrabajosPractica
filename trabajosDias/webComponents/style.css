@@ -5,7 +5,7 @@
 }
 @font-face {
     font-family: letra;
-    src: url(/fonts/Montserrat-VariableFont_wght.ttf);
+    src: url(/trabajosDias/webComponents/fonts/Montserrat-VariableFont_wght.ttf);
 }
 #contenedorAll{
     width: 100vw;
