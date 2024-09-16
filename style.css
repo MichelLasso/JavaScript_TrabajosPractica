@@ -1,0 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.contenedor{
+    width: 100vw;
+    height: 56rem;
+    background-color: #D1EBF6;
+}
