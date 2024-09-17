@@ -83,7 +83,7 @@ function buscarId() {
                 <div id="text3">relatives :${connectionsV["relatives"]}</div>
             `
             imageContainer.innerHTML +=`
-                <img src="${imageV["url"]}" alt="">
+                <img src="${imageV["url"]}" alt="" class="imagenSuper">
             `
     }
     else{

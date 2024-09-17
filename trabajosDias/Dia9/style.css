@@ -63,3 +63,64 @@
 #text1{
     font-size: 1vw;
 }
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+    #contenedor{
+        width: 25.4rem;
+        height: 50rem;        
+    }
+    .contEnter{
+        margin-top:0;
+    }
+    #enter{
+        margin-left: 2.3rem;
+        position: relative;
+        width: 15rem;
+        height: 2rem;
+        top: -9rem;
+        border-radius: 0.5rem;
+    }
+    #uno{
+        width: 7rem;
+        position: absolute;
+        left: 4.2rem;
+        margin-top: -7rem;
+        height: 2.5rem;
+        border-radius: 0.5rem;
+        font-size: 0.8rem;
+    }
+    #dos{
+        width: 7rem;
+        margin-left: 0.5rem;
+        margin-top: -7rem;
+        margin-left: 10.2rem;
+        position: absolute;
+        height: 2.5rem;
+        border-radius: 0.5rem;
+        font-size: 0.8rem;
+    }
+    #uno{
+        margin-left: 2vw;
+    }
+    #poke{
+        width: 13.3vw;
+        height: 9vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 42.4vw;
+        top: 18.4vw;
+    }
+    #name{
+        position: absolute;
+        top: 28vw;
+        left: 50vw;
+        width: 8vw;
+    }
+    #text1{
+        font-size: 1vw;
+    }
+    .imagen{
+        width: 21rem;
+    }
+}
