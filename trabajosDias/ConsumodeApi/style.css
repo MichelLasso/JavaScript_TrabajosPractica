@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow-x: hidden;
+}
+@font-face {
+    font-family: letra;
+    src: url(fonts/Soda\ Shake.ttf);
+}
+@font-face {
+    font-family: titulo;
+    src: url(fonts/Banana\ Summer.otf);
+}
+@font-face {
+    font-family: a;
+    src: url(fonts/Bluffolk.otf);
+}
+.contenedor{
+    width: 100vw;
+    height: 60rem;
+    background-color: #000000;
+}
+.menu{
+    width: 100vw;
+    position: fixed;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    height: 3rem;
+    background-color: #8f7d75;
+}
+h4{
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-family: a;
+}
+h4:hover{
+    font-size: 1.2rem;
+}
+h1{
+    padding-top: 7rem;
+    color: #fbe5ad;
+    font-size: 4rem;
+    font-family: a;
+    text-align: center;
+}
+.info{
+    padding-top: 4rem;
+    font-size: 1.5rem;
+    font-family: a;
+    width: 100vw;
+    height: auto;
+    text-align: center;
+    color: rgb(192, 186, 186);
+}

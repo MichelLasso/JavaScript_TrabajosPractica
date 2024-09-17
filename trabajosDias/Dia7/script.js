@@ -42,8 +42,7 @@ function buscarId() {
         var imageV= buscarName[0].image;
         console.log(imageV);
         
-            powerstatsContainer.innerHTML = "";
-            powerstatsContainer.innerHTML += `
+            powerstatsContainer.innerHTML = `
                     <div id="titulo1">PowerStats</div>
                     <div id="text1">intelligence: ${powerstatsV.intelligence}</div>
                     <div id="text1">strength: ${powerstatsV.strength}</div>
@@ -52,7 +51,7 @@ function buscarId() {
                     <div id="text1">power: ${powerstatsV.power}</div>
                     <div id="text1">combat: ${powerstatsV.combat}</div>
             `;
-            biographyContainer.innerHTML += `
+            biographyContainer.innerHTML = `
                 <div id="titulo1">Biography</div>
                 <div id="text1">full name : ${biographyV["full-name"]}</div>
                 <div id="text1">alter egos : ${biographyV["alter-egos"]}</div>
@@ -63,7 +62,7 @@ function buscarId() {
                 <div id="text1">alignment : ${biographyV["alignment"]}</div>
 
             `
-            appearanceContainer.innerHTML += `
+            appearanceContainer.innerHTML = `
                 <div id="titulo1">Appearance</div>
                 <div id="text1">gender: ${appearanceV["gender"]}</div>
                 <div id="text1">race: ${appearanceV["race"]}</div>
@@ -72,17 +71,17 @@ function buscarId() {
                 <div id="text1">eye color: ${appearanceV["eye-color"]}</div>
                 <div id="text1">hair color: ${appearanceV["hair-color"]}</div>
             `
-            workContainer.innerHTML +=`
+            workContainer.innerHTML =`
                 <div id="titulo1">Work</div>
                 <div id="text1">occupation :${workV["occupation"]}</div>
                 <div id="text1">base :${workV["base"]}</div>
             `
-            connections.innerHTML +=`   
+            connections.innerHTML =`   
                 <div id="titulo1">Connections</div>
                 <div id="text3">group affiliation : ${connectionsV["group-affiliation"]}</div>
                 <div id="text3">relatives :${connectionsV["relatives"]}</div>
             `
-            imageContainer.innerHTML +=`
+            imageContainer.innerHTML =`
                 <img src="${imageV["url"]}" alt="" class="imagenSuper">
             `
     }
@@ -98,7 +97,7 @@ function buscarId() {
         var imageV= busca[0].image.url;
         console.log(imageV);
         
-            powerstatsContainer.innerHTML += `
+            powerstatsContainer.innerHTML = `
                     <div id="titulo1">PowerStats</div>
                     <div id="text1">intelligence: ${powerstatsV.intelligence}</div>
                     <div id="text1">strength: ${powerstatsV.strength}</div>
@@ -107,7 +106,7 @@ function buscarId() {
                     <div id="text1">power: ${powerstatsV.power}</div>
                     <div id="text1">combat: ${powerstatsV.combat}</div>
             `;
-            biographyContainer.innerHTML += `
+            biographyContainer.innerHTML = `
                 <div id="titulo1">Biography</div>
                 <div id="titulo1">PowerStats</div>
                 <div id="text1">full name : ${biographyV["full-name"]}</div>
@@ -119,7 +118,7 @@ function buscarId() {
                 <div id="text1">alignment : ${biographyV["alignment"]}</div>
 
             `
-            appearanceContainer.innerHTML += `
+            appearanceContainer.innerHTML = `
                 <div id="titulo1">Appearance</div>
                 <div id="text1">gender: ${appearanceV["gender"]}</div>
                 <div id="text1">race: ${appearanceV["race"]}</div>
@@ -128,17 +127,17 @@ function buscarId() {
                 <div id="text1">eye color: ${appearanceV["eye-color"]}</div>
                 <div id="text1">hair color: ${appearanceV["hair-color"]}</div>
             `
-            workContainer.innerHTML +=`
+            workContainer.innerHTML =`
                 <div id="titulo1">Work</div>
                 <div id="text1">occupation :${workV["occupation"]}</div>
                 <div id="text1">base :${workV["base"]}</div>
             `
-            connections.innerHTML +=`
+            connections.innerHTML =`
                 <div id="titulo1">Connections</div>
                 <div id="text3">group affiliation : ${connectionsV["group-affiliation"]}</div>
                 <div id="text3">relatives :${connectionsV["relatives"]}</div>
             `
-            imageContainer.innerHTML +=`
+            imageContainer.innerHTML =`
                 
                 <img src="${imageV}" id="imagen">
             `

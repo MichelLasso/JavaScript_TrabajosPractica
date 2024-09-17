@@ -2,8 +2,51 @@
     margin: 0;
     padding: 0;
 }
+@font-face {
+    font-family: letra;
+    src: url(fonts/The\ Billion.otf);
+}
+@font-face {
+    font-family: titulos;
+    src: url(fonts/Howdy\ Lemon.ttf);
+}
+body{
+    overflow-x: hidden;
+}
 .contenedor{
     width: 100vw;
-    height: 56rem;
-    background-color: #D1EBF6;
+    height: 100rem;
+    background-color: #FEFBBA;
+}
+.name{
+    width: 100vw;
+    padding-top: 2.5rem;
+    height: auto;
+    text-align: center;
+    font-family: letra;
+    font-size: 5rem;
+    color: #4CB4F0;
+}
+.barraFija{
+    width: 98vw;
+    display: flex;
+    align-items: center;
+    height: 7rem;
+    position: fixed;
+    justify-content: space-evenly;
+}
+.cinaFija{
+    width: 7rem;
+    height: 7rem;
+}
+.link{
+    text-decoration: none;
+}
+.uno{
+    color: #4CB4F0;
+    font-size: 1rem;
+}
+.uno:hover{
+    font-size: 1.3rem;
+    border-bottom: 0.1vw solid #4CB4F0;
 }
