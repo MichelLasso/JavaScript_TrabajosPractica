@@ -15,12 +15,15 @@ body{
 }
 .contenedor{
     width: 100vw;
-    height: 100rem;
+    height: 59rem;
     background-color: #FEFBBA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .name{
     width: 100vw;
-    padding-top: 2.5rem;
+    padding-top: 5rem;
     height: auto;
     text-align: center;
     font-family: letra;
@@ -43,10 +46,25 @@ body{
     text-decoration: none;
 }
 .uno{
-    color: #4CB4F0;
-    font-size: 1rem;
+    color: #000000;
+    font-size: 1.3rem;
 }
 .uno:hover{
+    animation: 2s;
     font-size: 1.3rem;
     border-bottom: 0.1vw solid #4CB4F0;
+}
+.botones{
+    width: 80vw;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.trabajos{
+    width: 15vw;
+    border-radius: 30px;
+    height: 8vw;
+    background-color: #F6D4E3;
 }
