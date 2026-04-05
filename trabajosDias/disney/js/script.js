@@ -54,7 +54,7 @@ function mostrarApi(link) {
                             <p class="card-text">${disneyApi.data.videoGames}</p>
                         </div>
                     </div>
-                    <img src="/trabajosDias/disney/img/png-transparent-mickey-mouse-logo-goofy-the-walt-disney-company-logo-mickey-television-logo-computer-wallpaper-thumbnail-removebg-preview.png" id="miki2">
+                    <img src="./img/png-transparent-mickey-mouse-logo-goofy-the-walt-disney-company-logo-mickey-television-logo-computer-wallpaper-thumbnail-removebg-preview.png" id="miki2">
                 </div>
             </div>
         `

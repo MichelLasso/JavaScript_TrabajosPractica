@@ -1,6 +1,6 @@
 @font-face {
     font-family: fuente;
-    src: url(/trabajosDias/disney/fonts/waltograph42.ttf);
+    src: url(../fonts/waltograph42.ttf);
 }
 
 #contenedor{
@@ -10,7 +10,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-image: url(/trabajosDias/disney/img/falling-silver-stars-on-white-background-free-vector.jpg);
+    background-image: url(../img/falling-silver-stars-on-white-background-free-vector.jpg);
 }
 #imgLogo{
     width: 20vw;
