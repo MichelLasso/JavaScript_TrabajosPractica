@@ -4,13 +4,17 @@
 }
 @font-face {
     font-family: letra;
-    src: url(/trabajosDias/Dia13/fonts/Asdonuts.ttf);
+    src: url(../fonts/Asdonuts.ttf);
 }
 @font-face {
     font-family: poker;
-    src: url(/trabajosDias/Dia13/fonts/Poker.ttf);
+    src: url(../fonts/Poker.ttf);
 }
-
+.btnMenu {
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
 .todoElTrabajo{
     width: 100vw;
     overflow: hidden;

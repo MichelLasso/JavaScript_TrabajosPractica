@@ -8,6 +8,11 @@ body{
     width: 100vw;
     height: 29rem;
 }
+.btnMenu, .btnRecargar {
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
 #contBlanco{
     width: 100vw;
     position: absolute;

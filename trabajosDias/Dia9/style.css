@@ -5,6 +5,12 @@
     font-family: 'Oxanium', cursive;
 }
 
+.btnMenu {
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
 /* CONTENEDOR PRINCIPAL */
 #contenedor{
     width: 100%;
