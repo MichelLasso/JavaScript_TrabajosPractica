@@ -66,7 +66,7 @@ body{
     flex-wrap: wrap;
 }
 #imagen{
-    background-image: url(/trabajosDias/Dia11/img/card_icons.png);
+    background-image: url(../Dia11/img/card_icons.png);
     width: 5rem;
     height: 6.1rem;
     transform: scale(0.6);
@@ -74,7 +74,7 @@ body{
     background-position-y: 6.1rem;
 }
 #imagen2{
-    background-image: url(/trabajosDias/Dia11/img/card_icons.png);
+    background-image: url(../Dia11/img/card_icons.png);
     width: 5rem;
     height: 6.1rem;
     transform: scale(0.6);
@@ -83,7 +83,7 @@ body{
     
 }
 #imagen3{
-    background-image: url(/trabajosDias/Dia11/img/card_icons.png);
+    background-image: url(../Dia11/img/card_icons.png);
     width: 5rem;
     height: 6.1rem;
     transform: scale(0.6);
@@ -92,7 +92,7 @@ body{
     
 }
 #imagen4{
-    background-image: url(/trabajosDias/Dia11/img/card_icons.png);
+    background-image:url(../Dia11/img/card_icons.png);
     width: 6.1rem;
     height: 6rem;
     transform: scale(0.6);
@@ -101,7 +101,7 @@ body{
     
 }
 #imagen5{
-    background-image: url(/trabajosDias/Dia11/img/card_icons.png);
+    background-image: url(../Dia11/img/card_icons.png);
     width: 5rem;
     height: 6.1rem;
     transform: scale(0.6);
@@ -110,7 +110,7 @@ body{
     
 }
 #imagen6{
-    background-image: url(/trabajosDias/Dia11/img/card_icons.png);
+    background-image: url(../Dia11/img/card_icons.png);
     width: 5rem;
     height: 6.1rem;
     transform: scale(0.6);
