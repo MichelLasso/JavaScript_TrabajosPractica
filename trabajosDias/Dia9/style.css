@@ -14,7 +14,12 @@
     
 }
 .contEnter{
-    margin-top: -11.5vw;
+    background-color: #424242;
+    margin-top: -15vw;
+    width: 26vw;
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
 }
 #enter{
     margin-left: 2VW;
