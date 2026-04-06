@@ -3,7 +3,7 @@ document.getElementById("enviar").addEventListener("click",aggId)
 function aggId() {
 
     var idInput= document.getElementById("enter").value;
-    let link= "http://api.disneyapi.dev/character/"+idInput
+    let link= "https://api.disneyapi.dev/character/"+idInput
     
     mostrarApi(link)
 }
@@ -14,8 +14,8 @@ function mostrarApi(link) {
     .then(disneyApi=>{
         console.log(disneyApi);
         
-        document.getElementById("cont2").innerHTML += ""
-        document.getElementById("cont2").innerHTML += `
+        document.getElementById("cont2").innerHTML = ""
+        document.getElementById("cont2").innerHTML = `
 
             <div id="name">${disneyApi.data.tvShows}</div> 
 
