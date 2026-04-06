@@ -4,128 +4,115 @@
     box-sizing: border-box;
     font-family: 'Oxanium', cursive;
 }
+
+/* CONTENEDOR PRINCIPAL */
 #contenedor{
-    width: 100vw;
-    height: 50vw;
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    background: linear-gradient(to top,  #e4f2fd 0%, #abd5fa 49%, #73bbf6 100%);
     align-items: center;
-    
+    background: linear-gradient(to top,  #e4f2fd 0%, #abd5fa 49%, #73bbf6 100%);
+    position: relative;
 }
+
+/* CONTENEDOR INPUT */
 .contEnter{
-    background-color: #424242;
-    margin-top: -15vw;
-    width: 26vw;
-    align-items: flex-end;
+    width: 360px;
     display: flex;
+    margin-top: -200px;
     flex-direction: column;
+    align-items: flex-end;
+    padding: 15px;
+    gap: 10px;
+    position: relative;
+    z-index: 2;
 }
+
+/* INPUT */
 #enter{
-    margin-left: 2VW;
-    width: 16vw;
-    height: 2vw;
-    -webkit-box-shadow: -6px 5px 0px 0px rgb(93, 93, 93);
-    -moz-box-shadow: -6px 5px 0px 0px rgba(93, 93, 93);
+    width: 200px;
+    height: 30px;
+    margin-bottom: 30px;
     box-shadow: -6px 5px 0px 0px rgba(93, 93, 93);
-    border-radius: 0.5vw;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
 }
+
+/* BOTONES */
 #uno,#dos{
-    width: 7.6vw;
-    margin-left: 0.5vw;
-    height: 2.5vw;
-    margin-top: 4.7vw;
-    border-radius: 0.5vw;
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
     border: 0;
     background-color: #424242;
     color: white;
-    font-size: 0.8vw;
-    -webkit-box-shadow: -6px 5px 0px 0px rgb(25, 25, 25);
-    -moz-box-shadow: -6px 5px 0px 0px rgba(25, 25, 25);
+    font-size: 12px;
     box-shadow: -6px 5px 0px 0px rgba(25, 25, 25);
     cursor: pointer;
-    border-color: black;
 }
-#uno{
-    margin-left: 2vw;
-}
-#poke{
-    width: 13.3vw;
-    height: 9vw;
+
+/* CONTENEDOR BOTONES */
+.contEnter div{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    left: 42.4vw;
-    top: 18.4vw;
+    gap: 10px;
 }
+
+/* IMAGEN PRINCIPAL */
+#poke{
+    width: 254px;
+    height: auto;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 45%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* NOMBRE */
 #name{
     position: absolute;
-    top: 28vw;
-    left: 50vw;
-    width: 8vw;
+    top: 61%;
+    left: 55%;
+    transform: translateX(-50%);
+    width: auto;
+    text-align: center;
 }
+
 #text1{
-    font-size: 1vw;
+    font-size: 14px;
 }
-@media only screen and (min-width : 320px) and (max-width : 480px) {
-    #contenedor{
-        width: 25.4rem;
-        height: 50rem;        
-    }
+
+/* IMÁGENES GENERALES */
+.imagen{
+    max-width: 100%;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+
     .contEnter{
-        margin-top:0;
-    }
-    #enter{
-        margin-left: 2.3rem;
-        position: relative;
-        width: 15rem;
-        height: 2rem;
-        top: -9rem;
-        border-radius: 0.5rem;
-    }
-    #uno{
-        width: 7rem;
-        position: absolute;
-        left: 4.2rem;
-        margin-top: -7rem;
-        height: 2.5rem;
-        border-radius: 0.5rem;
-        font-size: 0.8rem;
-    }
-    #dos{
-        width: 7rem;
-        margin-left: 0.5rem;
-        margin-top: -7rem;
-        margin-left: 10.2rem;
-        position: absolute;
-        height: 2.5rem;
-        border-radius: 0.5rem;
-        font-size: 0.8rem;
-    }
-    #uno{
-        margin-left: 2vw;
-    }
-    #poke{
-        width: 13.3vw;
-        height: 9vw;
-        display: flex;
+        width: 90%;
         align-items: center;
-        justify-content: center;
-        position: absolute;
-        left: 42.4vw;
-        top: 18.4vw;
     }
+
+    #enter{
+        width: 80%;
+    }
+
+    #uno, #dos{
+        width: 120px;
+    }
+
+    #poke{
+        width: 150px;
+        top: 40%;
+    }
+
     #name{
-        position: absolute;
-        top: 28vw;
-        left: 50vw;
-        width: 8vw;
-    }
-    #text1{
-        font-size: 1vw;
-    }
-    .imagen{
-        width: 21rem;
+        top: 65%;
     }
 }
